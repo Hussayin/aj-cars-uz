@@ -24,25 +24,26 @@ const Navbar = () => {
   return (
     <div className="w-full">
       {/* Navbar */}
-      <div className=" z-[10000]  border-b-[2px] border-solid dark:border-black rounded-b-[15px] bg-[#2e1563] dark:bg-[#f7a8ba]  md:text-white dark:text-black flex justify-between py-[17px] items-center w-[100%] border-white px-[25px] md:px-[40px]  m-auto ">
+      <div className=" z-[10000]  border-b-[2px] border-solid dark:border-black rounded-b-[20px] bg-[#000000] dark:bg-[#f0ecec]  md:text-white dark:text-black flex justify-between py-[5px] items-center w-[100%] border-white px-[25px] md:px-[40px]  m-auto ">
         <div>
-          <h1 className=" font-kanit flex justify-center items-center gap-[7px] text-[24px] dark:text-black ">
+          <img src="public/logo.jpg" alt="" className=" h-[65px]" />
+          {/* <h1 className=" font-kanit flex justify-center items-center gap-[7px] text-[24px] dark:text-black ">
             AJ MOTORS
-          </h1>
+          </h1> */}
         </div>
         {/* laptop */}
         <div className=" md:flex hidden justify-center items-center gap-[65px] ">
           <div className="text-[20px] font-kanit flex justify-center items-center gap-[35px] ">
-            <a className=" hover:text-red-500 duration-300 " href="#">
+            <a className="duration-300 hover:text-red-500" href="#">
               Home
             </a>
-            <a className=" hover:text-red-500 duration-300 " href="#">
+            <a className="duration-300 hover:text-red-500" href="#">
               About
             </a>
-            <a className=" hover:text-red-500 duration-300 " href="#">
+            <a className="duration-300 hover:text-red-500" href="#">
               Servis
             </a>
-            <a className=" hover:text-red-500 duration-300 " href="#">
+            <a className="duration-300 hover:text-red-500" href="#">
               Contact
             </a>
           </div>
