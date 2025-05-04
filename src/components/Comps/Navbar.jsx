@@ -16,6 +16,7 @@ import { MdMiscellaneousServices } from "react-icons/md";
 import { MdSell } from "react-icons/md";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { GiCupcake } from "react-icons/gi";
+import { Logo } from "../../../public/ImageShare";
 
 const Navbar = () => {
   const { toggleDarkMode, darkMode } = useTheme();
@@ -26,7 +27,7 @@ const Navbar = () => {
       {/* Navbar */}
       <div className=" z-[10000]  border-b-[2px] border-solid dark:border-black rounded-b-[20px] bg-[#000000] dark:bg-[#f0ecec]  md:text-white dark:text-black flex justify-between py-[5px] items-center w-[100%] border-white px-[25px] md:px-[40px]  m-auto ">
         <div>
-          <img src="public/logo.jpg" alt="" className=" h-[65px]" />
+          <img src={Logo} alt="" className=" h-[65px]" />
           {/* <h1 className=" font-kanit flex justify-center items-center gap-[7px] text-[24px] dark:text-black ">
             AJ MOTORS
           </h1> */}
