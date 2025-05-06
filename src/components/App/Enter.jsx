@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"; // Helmetni import qilish
 import Navbar from "../Comps/Navbar";
 import { Corusell } from "../Comps/Corusel";
 import MenuBrends from "../Comps/Brends";
-// import Search from "../Comps/Search";
+import Search from "../Comps/Search";
 
 const Enter = () => {
   return (
@@ -13,9 +13,10 @@ const Enter = () => {
         <title>AJ MOTORS</title>
       </Helmet>
       <Navbar />
-      {/* <Search /> */}
+      <Search />
       <Corusell />
       <MenuBrends/>
+      
     </div>
   );
 };

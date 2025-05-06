@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
+import { FaAnglesRight } from "react-icons/fa6";
+
+
 const MenuBrends = () => {
   return (
-    <div className=" flex  gap-[13px] mx-[7px]  mt-[6px] rounded-[10px] overflow-x-scroll dark:bg-white bg-[#3b3b3b] p-[3px] hide-scrollbar ">
-
-
+   <div className=" font-kanit mx-[7px]  mt-[6px]" >
+    <div className="flex items-center justify-between px-[5px] " >
+    <h1 className="font-kanit text-[20px]" >All Brends</h1>
+    <h1 className=" text-[24px]" ><FaAnglesRight/></h1>
+    </div>
+     <div className=" flex dark:bg-[#f0ecec]  gap-[15px] mt-[3px] rounded-[10px] overflow-x-scroll bg-[#3b3b3b] p-[3px] hide-scrollbar ">
 <button className="px-[6px] py-[5px] flex flex-col items-center text-sm font-semibold whitespace-nowrap transition-all">
   <div className="w-[60px] h-[60px] rounded-full overflow-hidden">
     <img
@@ -93,6 +99,7 @@ const MenuBrends = () => {
 </button>
 
       </div>
+   </div>
   );
 };
 
