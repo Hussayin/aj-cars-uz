@@ -4,6 +4,7 @@ import Navbar from "../Comps/Navbar";
 import { Corusell } from "../Comps/Corusel";
 import MenuBrends from "../Comps/Brends";
 import Search from "../Comps/Search";
+import ImageGallery from "../Comps/PopulorProducts";
 
 const Enter = () => {
   return (
@@ -15,8 +16,8 @@ const Enter = () => {
       <Navbar />
       <Search />
       <Corusell />
-      <MenuBrends/>
-      
+      <MenuBrends />
+      <ImageGallery />
     </div>
   );
 };

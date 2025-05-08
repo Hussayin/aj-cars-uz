@@ -7,7 +7,6 @@ import { ToastContainer } from "react-toastify"; // Toastni qo'shamiz
 import "react-toastify/dist/ReactToastify.css"; // Toast stilini import qilamiz
 
 const App = () => {
-  
   return (
     <div className="app">
       <BrowserRouter>
