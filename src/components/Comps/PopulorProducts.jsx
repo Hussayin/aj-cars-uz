@@ -40,7 +40,7 @@ export default function ImageGallery() {
           <motion.div
             key={img.id}
             onClick={() => setSelectedImage(img)}
-            className={` p-[10px] relative border-[1px] border-[#6a6a6a] flex mb-[7px] dark:bg-[#f0ecec] rounded-[15px] overflow-hidden transition-all duration-500 ${
+            className={` p-[10px] relative border-[1px] border-[#6a6a6a] dark:border-none flex mb-[7px] dark:bg-[#f4f1f1] rounded-[15px] overflow-hidden transition-all duration-500 ${
               isLoaded ? "blur-0 bg-[#3b3b3b]" : "blur-md bg-[#3b3b3b] "
             } `}
           >

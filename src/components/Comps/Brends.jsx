@@ -10,7 +10,7 @@ const MenuBrends = () => {
           <FaAnglesRight />
         </h1>
       </div>
-      <div className=" flex dark:bg-[#f0ecec]  gap-[12px] mt-[3px] rounded-[10px] overflow-x-scroll bg-[#3b3b3b] p-[3px] hide-scrollbar ">
+      <div className=" flex dark:bg-[#f4f1f1]  gap-[12px] mt-[3px] rounded-[10px] overflow-x-scroll bg-[#3b3b3b] p-[3px] hide-scrollbar ">
         <button className="px-[6px] py-[5px] flex flex-col items-center text-sm font-semibold whitespace-nowrap transition-all">
           <div className="w-[60px] h-[60px] rounded-full overflow-hidden">
             <img
