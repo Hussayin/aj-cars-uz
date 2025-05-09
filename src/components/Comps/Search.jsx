@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const Search = () => {
-    const [view, setView] = useState(false)
+  const [view, setView] = useState(false);
   return (
     <div
       className={` w-[100%] ${
@@ -15,7 +15,7 @@ const Search = () => {
         <input
           type="text"
           placeholder="Найдите название часов..."
-          className=" w-[100%] border-[1.7px] bg-[#f0ecec] border-black text-black px-[10px] rounded-md  p-[5px] outline-none  "
+          className=" w-[100%] border-[1.5px] bg-[#ffffff] border-black text-black px-[10px] rounded-md  p-[5px] outline-none  "
         />
       </div>
     </div>
