@@ -36,6 +36,7 @@ export default function ImageGallery() {
         Top Cars
       </h1>
       <div className="grid  grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[10px] px-[2px] ">
+        {/* Product */}
         {images.map((img, index) => (
           <motion.div
             key={img.id}
@@ -94,30 +95,30 @@ export default function ImageGallery() {
             </motion.div>
           </motion.div>
         ))}
+        {/* //! Product Details */}
         <AnimatePresence>
           {selectedImage && (
             <motion.div
-              className="fixed inset-0 dark:bg-[#facbd6] bg-[#492791] w-[100vw] overflow-x-auto h-[100vh] z-[111111111111] flex items-start justify-center"
+              className="fixed inset-0 dark:bg-[#ffffff] bg-[#2f2f2f] w-[100vw] overflow-x-auto h-[100vh] z-[111111111111] flex items-start justify-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedImage(null)}
             >
               <motion.div
-                className="relative mb-[75px] w-[100%] pt-[65px] justify-center py-[18px]"
+                className="relative mb-[5px] w-[100%] pt-[65px] justify-center py-[6px]"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/*//! Back button */}
                 <button
-                  className=" fixed w-[100%] flex at top-[0] border-b-2 dark:bg-[#f9aec0] bg-[#2e1563] text-white py-[9px] px-[13px] "
+                  className=" fixed w-[100%] flex top-[0] dark:bg-[#f9aec0] bg-[#3b3b3b] py-[6px] px-[10px] "
                   onClick={() => setSelectedImage(null)}
                 >
                   <IoMdArrowRoundBack
-                    className=" bg-white w-[60px] text-black rounded-xl p-[7px] "
+                    className="  w-[60px]  text-black bg-white rounded-xl p-[3px] "
                     size={40}
                   />
                 </button>
-                {/*  */}
                 {/*//! mein image and typs */}
                 <div className="flex dark:bg-[#f9aec0] bg-[#2e1563] pb-[15px] rounded-[30px] flex-col gap-[13px] justify-center items-center w-[100%]">
                   {/* Main image */}
@@ -338,7 +339,7 @@ export default function ImageGallery() {
                       <div>
                         <TbTruckDelivery className=" text-[100px] " />
                       </div>
-                      <h1 className=" font-nunito font-bold ">Доставка</h1>
+                      <h1 className="font-bold font-nunito">Доставка</h1>
                     </motion.div>
                     {/*  */}
                     <motion.div
@@ -354,7 +355,7 @@ export default function ImageGallery() {
                       <div>
                         <HiOutlineCake className=" text-[100px] " />
                       </div>
-                      <h1 className=" font-nunito font-bold ">
+                      <h1 className="font-bold font-nunito">
                         10% sale Birth days
                       </h1>
                     </motion.div>
