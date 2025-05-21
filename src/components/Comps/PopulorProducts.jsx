@@ -103,7 +103,6 @@ export default function ImageGallery() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setSelectedImage(null)}
             >
               <motion.div
                 className="relative mb-[5px] w-[100%] pt-[65px] justify-center py-[6px]"
@@ -111,256 +110,14 @@ export default function ImageGallery() {
               >
                 {/*//! Back button */}
                 <button
-                  className=" fixed w-[100%] flex top-[0] dark:bg-[#f9aec0] bg-[#3b3b3b] py-[6px] px-[10px] "
+                  className=" fixed w-[100%] flex top-[0] dark:bg-[#f9aec0] bg-[#3b3b3b] py-[10px] px-[10px] "
                   onClick={() => setSelectedImage(null)}
                 >
                   <IoMdArrowRoundBack
                     className="  w-[60px]  text-black bg-white rounded-xl p-[3px] "
-                    size={40}
+                    size={37}
                   />
                 </button>
-                {/*//! mein image and typs */}
-                <div className="flex dark:bg-[#f9aec0] bg-[#2e1563] pb-[15px] rounded-[30px] flex-col gap-[13px] justify-center items-center w-[100%]">
-                  {/* Main image */}
-                  <motion.div>
-                    <motion.img
-                      src={activeImage}
-                      alt="Active watch"
-                      className="w-[100%] object-cover m-auto rounded-[30px] h-[350px]"
-                    />
-                  </motion.div>
-                  <motion.div
-                    className={`  ${
-                      selectedImage.col2 ? "grid-cols-2" : "grid-cols-5"
-                    } flex gap-[10px] flex-wrap justify-center `}
-                  >
-                    {[
-                      selectedImage.img,
-                      selectedImage.img2,
-                      selectedImage.img3,
-                      selectedImage.img4,
-                      selectedImage.img5,
-                      selectedImage.img6,
-                      selectedImage.img7,
-                      selectedImage.img8,
-                      selectedImage.img9,
-                      selectedImage.img10,
-                    ].map(
-                      (img, index) =>
-                        img && (
-                          <img
-                            key={index}
-                            src={img}
-                            alt={`Watch ${index + 1}`}
-                            className={`md:h-[100px] md:w-auto h-[60px] w-[60px] rounded-2xl object-cover border-2 ${
-                              activeImage === img
-                                ? "border-gray-500 border-[3px] p-[1px]  rounded-2xl "
-                                : "border-transparent"
-                            }`}
-                            onClick={() => setActiveImage(img)}
-                          />
-                        )
-                    )}
-                  </motion.div>
-                </div>
-                {/*//! Price */}
-                <div className="mt-[30px] dark:bg-[#f9aec0] bg-[#2e1563] rounded-[30px] pb-[25px] ">
-                  <h1 className=" text-center font-bold font-nunito text-[24px] pb-[3px] pt-[10px] ">
-                    Cake Type
-                  </h1>
-                  <div className=" font-nunito px-[15px] flex flex-col gap-[7px] ">
-                    {/*  */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{
-                        ease: "easeOut", // Easing funksiyasi
-                        duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.1,
-                      }}
-                      className=" text-[20px] flex gap-[13px] items-center "
-                    >
-                      <h1>- Цена (x1):</h1>
-                      <h1>{selectedImage.price} cym</h1>
-                    </motion.div>
-                    {/*  */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{
-                        ease: "easeOut", // Easing funksiyasi
-                        duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.2,
-                      }}
-                      className=" text-[20px] flex gap-[13px] items-center "
-                    >
-                      <h1>- Цена (x2):</h1>
-                      <h1>{selectedImage.price2} cym</h1>
-                    </motion.div>
-                    {/*  */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{
-                        ease: "easeOut", // Easing funksiyasi
-                        duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.3,
-                      }}
-                      className=" text-[20px] flex gap-[13px] items-center "
-                    >
-                      <h1>- Цена (x3):</h1>
-                      <h1>{selectedImage.price3} cym</h1>
-                    </motion.div>
-                  </div>
-                </div>
-                {/*//! infos */}
-                <div className="mt-[30px] dark:bg-[#f9aec0] bg-[#2e1563] rounded-[30px] pb-[25px] ">
-                  <h1 className=" font-bold text-center font-nunito text-[24px] pb-[3px] pt-[10px] ">
-                    Cake Infos
-                  </h1>
-                  <div className=" font-nunito px-[15px] flex flex-col gap-[7px] ">
-                    {/*  */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{
-                        ease: "easeOut", // Easing funksiyasi
-                        duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.1,
-                      }}
-                      className=" text-[20px] flex gap-[13px] items-center "
-                    >
-                      <h1>- Hазвание:</h1>
-                      <h1>{selectedImage.title}</h1>
-                    </motion.div>
-                    {/*  */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{
-                        ease: "easeOut", // Easing funksiyasi
-                        duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.2,
-                      }}
-                      className=" text-[20px] flex gap-[13px] items-center "
-                    >
-                      <h1>- Диаметр (x1):</h1>
-                      <h1>{selectedImage.diameter}</h1>
-                    </motion.div>
-                    {/*  */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{
-                        ease: "easeOut", // Easing funksiyasi
-                        duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.3,
-                      }}
-                      className=" text-[20px] flex gap-[13px] items-center "
-                    >
-                      <h1>- Диаметр (x2):</h1>
-                      <h1>{selectedImage.diameter2}</h1>
-                    </motion.div>
-                    {/*  */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{
-                        ease: "easeOut", // Easing funksiyasi
-                        duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.4,
-                      }}
-                      className=" text-[20px] flex gap-[13px] items-center "
-                    >
-                      <h1>- Диаметр (x3):</h1>
-                      <h1>{selectedImage.diameter3}</h1>
-                    </motion.div>
-                    {/*  */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{
-                        ease: "easeOut", // Easing funksiyasi
-                        duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.5,
-                      }}
-                      className=" text-[20px] flex gap-[13px] items-center "
-                    >
-                      <h1>- Mасса (X1):</h1>
-                      <h1>{selectedImage.weight}</h1>
-                    </motion.div>
-                    {/*  */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{
-                        ease: "easeOut", // Easing funksiyasi
-                        duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.6,
-                      }}
-                      className=" text-[20px] flex gap-[13px] items-center "
-                    >
-                      <h1>- Mасса (X2):</h1>
-                      <h1>{selectedImage.weight2}</h1>
-                    </motion.div>
-                    {/*  */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{
-                        ease: "easeOut", // Easing funksiyasi
-                        duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.6,
-                      }}
-                      className=" text-[20px] flex gap-[13px] items-center "
-                    >
-                      <h1>- Mасса (X3):</h1>
-                      <h1>{selectedImage.weight3}</h1>
-                    </motion.div>
-                  </div>
-                </div>
-                {/*//! Our servises */}
-                <div className="mt-[30px] dark:bg-[#f9aec0] bg-[#2e1563] rounded-[30px] pb-[25px] ">
-                  <h1 className=" text-center font-bold font-nunito text-[24px] pb-[3px] pt-[10px] ">
-                    Наши услуги
-                  </h1>
-                  <div className=" mt-[15px] font-nunito px-[15px] flex justify-center leading-5 items-center gap-[40px] ">
-                    {/*  */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{
-                        ease: "easeOut", // Easing funksiyasi
-                        duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.1,
-                      }}
-                      className=" text-[20px] flex-col flex items-center "
-                    >
-                      <div>
-                        <TbTruckDelivery className=" text-[100px] " />
-                      </div>
-                      <h1 className="font-bold font-nunito">Доставка</h1>
-                    </motion.div>
-                    {/*  */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{
-                        ease: "easeOut", // Easing funksiyasi
-                        duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.1,
-                      }}
-                      className=" text-[20px] flex-col flex items-center "
-                    >
-                      <div>
-                        <HiOutlineCake className=" text-[100px] " />
-                      </div>
-                      <h1 className="font-bold font-nunito">
-                        10% sale Birth days
-                      </h1>
-                    </motion.div>
-                  </div>
-                </div>
                 {/*//! button buy */}
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
@@ -370,41 +127,45 @@ export default function ImageGallery() {
                     duration: 0.5, // Animatsiya davomiyligi
                     delay: 0.1,
                   }}
-                  className=" fixed gap-[10px] px-[20px] py-[10px] dark:bg-[#f9aec0] bg-[#2e1563]  z-[10000000000] bottom-0 w-[100%] flex justify-between items-center border-t-[2px] rounded-t-[20px] border-t-white p-[5px] "
+                  className=" pb-[15px] fixed gap-[10px] px-[20px] py-[10px] dark:bg-[#f9aec0] bg-[#3b3b3b]  z-[10000000000] bottom-0 w-[100%] flex justify-between items-center border-t-[2px] rounded-t-[20px] border-t-white pt-[10px] "
                 >
-                  {/* buttons */}
-                  <a
-                    href="https://t.me/khusko077"
-                    target="_blank"
-                    className=" text-[21px] p-[5px] border-[2px] bg-green-600 rounded-[10px] border-black w-[100%] text-center "
-                  >
-                    Buy
-                  </a>
-                  {/* buttons */}
-                  <a
-                    href="https://t.me/khusko077"
-                    target="_blank"
-                    className=" text-[21px] p-[5px] border-[2px] bg-green-600 rounded-[10px] border-black w-[100%] text-center "
-                  >
-                    Order
-                  </a>
+                  {/* //! price */}
                   <div>
-                    <a
-                      target="_blank"
-                      href="https://www.instagram.com/khusko1"
-                      className=" text-[30px]  "
-                    >
-                      <FaInstagram />
-                    </a>
+                    <div className=" text-center">
+                      <h1 className=" font-nunito text-[19px]  ">
+                        {selectedImage.price} ${" "}
+                      </h1>
+                      <h1 className=" opacity-65 font-nunito">
+                        {selectedImage.price2} UZS
+                      </h1>
+                    </div>
                   </div>
-                  <div>
+                  <div className=" flex justify-center items-center gap-[9px] ">
                     <a
-                      target="_blank"
                       href="https://t.me/khusko077"
-                      className=" text-[30px]"
+                      target="_blank"
+                      className=" text-[20px] p-[7px] border-[2px] text-black bg-white rounded-[10px] border-black w-[145px] text-center "
                     >
-                      <FaTelegram />
+                      Оформить
                     </a>
+                    <div>
+                      <a
+                        target="_blank"
+                        href="https://www.instagram.com/khusko1"
+                        className=" text-[30px]  "
+                      >
+                        <FaInstagram />
+                      </a>
+                    </div>
+                    <div>
+                      <a
+                        target="_blank"
+                        href="https://t.me/khusko077"
+                        className=" text-[30px]"
+                      >
+                        <FaTelegram />
+                      </a>
+                    </div>
                   </div>
                 </motion.div>
               </motion.div>
@@ -415,3 +176,48 @@ export default function ImageGallery() {
     </div>
   );
 }
+
+//  {/*//! mein image and typs */}
+//  <div className="flex dark:bg-[#f9aec0] bg-[#2e1563] pb-[15px] rounded-[30px] flex-col gap-[13px] justify-center items-center w-[100%]">
+//  {/* Main image */}
+//  <motion.div>
+//    <motion.img
+//      src={activeImage}
+//      alt="Active watch"
+//      className="w-[100%] object-cover m-auto rounded-[30px] h-[350px]"
+//    />
+//  </motion.div>
+//  <motion.div
+//    className={`  ${
+//      selectedImage.col2 ? "grid-cols-2" : "grid-cols-5"
+//    } flex gap-[10px] flex-wrap justify-center `}
+//  >
+//    {[
+//      selectedImage.img,
+//      selectedImage.img2,
+//      selectedImage.img3,
+//      selectedImage.img4,
+//      selectedImage.img5,
+//      selectedImage.img6,
+//      selectedImage.img7,
+//      selectedImage.img8,
+//      selectedImage.img9,
+//      selectedImage.img10,
+//    ].map(
+//      (img, index) =>
+//        img && (
+//          <img
+//            key={index}
+//            src={img}
+//            alt={`Watch ${index + 1}`}
+//            className={`md:h-[100px] md:w-auto h-[60px] w-[60px] rounded-2xl object-cover border-2 ${
+//              activeImage === img
+//                ? "border-gray-500 border-[3px] p-[1px]  rounded-2xl "
+//                : "border-transparent"
+//            }`}
+//            onClick={() => setActiveImage(img)}
+//          />
+//        )
+//    )}
+//  </motion.div>
+// </div>
