@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TiDelete } from "react-icons/ti";
-import { MdPriceChange } from "react-icons/md";
+import { MdAddShoppingCart, MdPriceChange } from "react-icons/md";
 import { OldWatches } from "../Data/ProductData";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaInstagram, FaStarAndCrescent, FaTelegram } from "react-icons/fa";
 import { HiOutlineCake } from "react-icons/hi";
+import { BsBatteryCharging } from "react-icons/bs";
 
 const images = OldWatches;
 
@@ -35,13 +36,13 @@ export default function ImageGallery() {
       <h1 className=" font-nunito md:text-[35px] mb-[5px] text-[27px] dark:text-black font-bold text-white">
         Top Cars
       </h1>
-      <div className="grid  grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[10px] px-[2px] ">
+      <div className="grid  grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[10px] px-[4px] ">
         {/* Product */}
         {images.map((img, index) => (
           <motion.div
             key={img.id}
             onClick={() => setSelectedImage(img)}
-            className={` p-[10px] relative border-[1px] border-[#6a6a6a] dark:border-none flex mb-[7px] dark:bg-[#f4f1f1] rounded-[15px] overflow-hidden transition-all duration-500 ${
+            className={` p-[10px] relative border-[2px] border-[#515151] dark:border-none flex mb-[7px] dark:bg-[#f4f1f1] rounded-[15px] overflow-hidden transition-all duration-500 ${
               isLoaded ? "blur-0 bg-[#3b3b3b]" : "blur-md bg-[#3b3b3b] "
             } `}
           >
@@ -105,12 +106,12 @@ export default function ImageGallery() {
               exit={{ opacity: 0 }}
             >
               <motion.div
-                className="relative mb-[5px] w-[100%] pt-[65px] justify-center py-[6px]"
+                className="relative w-[100%] pt-[65px] justify-center py-[6px]"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/*//! Back button */}
                 <button
-                  className=" fixed w-[100%] flex top-[0] dark:bg-[#f9aec0] bg-[#3b3b3b] py-[10px] px-[10px] "
+                  className=" fixed border-b-[3px] border-[#515151] w-[100%] flex top-[0] dark:bg-[#f9aec0] bg-[#3b3b3b] py-[10px] px-[10px] "
                   onClick={() => setSelectedImage(null)}
                 >
                   <IoMdArrowRoundBack
@@ -118,6 +119,92 @@ export default function ImageGallery() {
                     size={37}
                   />
                 </button>
+
+                {/* //! Product details */}
+                <div className="dark:bg-white px-[10px] pt-[10px] pb-[20px] bg-[#323232] gap-[17px] h-[82vh] justify-between dark:border-black border-white border-b-[2px] overflow-hidden relative rounded-b-[20px] border-solid md:p-[50px]  flex flex-col">
+                  <div className=" flex flex-col gap-[20px]">
+                    {/* Logo */}
+                    <div className="flex gap-[5px] justify-between items-center">
+                      <motion.img
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ ease: "easeOut", duration: 1.5 }}
+                        src="https://khusko-motors.netlify.app/assets/BYD-logo-DJ9JrYTw.jpg"
+                        alt="logo-brend"
+                        className=" bg-black w-[50px] text-center rounded-3xl object-cover"
+                      />
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ ease: "easeOut", duration: 1.5 }}
+                        className=" flex flex-col gap-[10px] "
+                      >
+                        <button
+                          // onClick={handleAdd}
+                          className="text-[33px] pr-[10px] "
+                        >
+                          <MdAddShoppingCart />
+                        </button>
+                      </motion.div>
+                    </div>
+
+                    {/* Name and model */}
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ ease: "easeOut", duration: 1.5 }}
+                      className=" leading-6 mt-[10px] flex flex-col gap-[8px] "
+                    >
+                      <h1 className=" text-[27px] font-nunito font-bold ">
+                        BYD HAN GREEN 5G
+                      </h1>
+                      <h1 className=" text-[25px] font-nunito ">
+                        Full electro
+                      </h1>
+                      <h1 className=" font-nunito">Model: 2025</h1>
+                      <h1 className=" text-[35px]">
+                        <BsBatteryCharging />
+                      </h1>
+                    </motion.div>
+                  </div>
+
+                  {/* Images */}
+                  <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      ease: "easeOut", // Easing funksiyasi
+                      duration: 1, // Animatsiya davomiyligi
+                      delay: 0.2,
+                    }}
+                    className=" absolute bottom-[130px] -right-[290px] h-auto "
+                  >
+                    {/* Main image */}
+                    <img
+                      src={selectedImage.img}
+                      alt=""
+                      className=" h-[260px] "
+                    />
+                  </motion.div>
+
+                  {/* Price */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ ease: "easeOut", duration: 1.5, delay: 0.2 }}
+                    className="flex justify-between items-center"
+                  >
+                    <div className=" text-center">
+                      <h1 className="font-nunito text-[30px]">
+                        {selectedImage.price}$
+                      </h1>
+                      <h1 className="line-through opacity-55 leading-5 text-[18px]">
+                        {selectedImage.price2} UZS
+                      </h1>
+                    </div>
+                  </motion.div>
+                </div>
+
                 {/*//! button buy */}
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
@@ -127,7 +214,7 @@ export default function ImageGallery() {
                     duration: 0.5, // Animatsiya davomiyligi
                     delay: 0.1,
                   }}
-                  className=" pb-[20px] fixed gap-[10px] px-[20px] py-[10px] dark:bg-[#f9aec0] bg-[#3b3b3b]  z-[10000000000] bottom-0 w-[100%] flex justify-between items-center border-t-[2px] rounded-t-[20px] border-t-white pt-[5px] "
+                  className=" pb-[22px] fixed gap-[10px] px-[20px] py-[10px] dark:bg-[#f9aec0] bg-[#3b3b3b]  z-[10000000000] bottom-0 w-[100%] flex justify-between items-center border-t-[2px] rounded-t-[20px] border-t-white pt-[5px] "
                 >
                   {/* //! price */}
                   <div>
