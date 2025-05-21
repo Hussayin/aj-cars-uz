@@ -127,7 +127,7 @@ export default function ImageGallery() {
                     duration: 0.5, // Animatsiya davomiyligi
                     delay: 0.1,
                   }}
-                  className=" pb-[15px] fixed gap-[10px] px-[20px] py-[10px] dark:bg-[#f9aec0] bg-[#3b3b3b]  z-[10000000000] bottom-0 w-[100%] flex justify-between items-center border-t-[2px] rounded-t-[20px] border-t-white pt-[10px] "
+                  className=" pb-[20px] fixed gap-[10px] px-[20px] py-[10px] dark:bg-[#f9aec0] bg-[#3b3b3b]  z-[10000000000] bottom-0 w-[100%] flex justify-between items-center border-t-[2px] rounded-t-[20px] border-t-white pt-[5px] "
                 >
                   {/* //! price */}
                   <div>
