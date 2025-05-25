@@ -25,7 +25,7 @@ export default function ImageGallery() {
   }, [selectedImage]);
 
   // On component load, set initial active image
-  useEffect(() => {
+  useEffect(() => { 
     if (selectedImage) {
       setActiveImage(selectedImage.img); // Default to the first image
     }
@@ -100,7 +100,7 @@ export default function ImageGallery() {
         <AnimatePresence>
           {selectedImage && (
             <motion.div
-              className="fixed inset-0 dark:bg-[#ffffff] bg-[#2f2f2f] w-[100vw] overflow-x-auto h-[100vh] z-[111111111111] flex items-start justify-center"
+              className="fixed inset-0 dark:bg-[#ffffff] pb-[200px] bg-[#2f2f2f] w-[100vw] overflow-x-auto h-[100vh] z-[111111111111] flex items-start justify-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -111,7 +111,7 @@ export default function ImageGallery() {
               >
                 {/*//! Back button */}
                 <button
-                  className=" fixed border-b-[3px] border-[#515151] w-[100%] flex top-[0] dark:bg-[#f9aec0] bg-[#3b3b3b] py-[10px] px-[10px] "
+                  className=" fixed border-b-[3px] z-[1000000] border-[#515151] w-[100%] flex top-[0] dark:bg-[#f9aec0] bg-[#3b3b3b] py-[10px] px-[10px] "
                   onClick={() => setSelectedImage(null)}
                 >
                   <IoMdArrowRoundBack
@@ -121,7 +121,7 @@ export default function ImageGallery() {
                 </button>
 
                 {/* //! Product details */}
-                <div className="dark:bg-white px-[10px] pt-[10px] pb-[20px] bg-[#323232] gap-[17px] h-[82vh] justify-between dark:border-black border-white border-b-[2px] overflow-hidden relative rounded-b-[20px] border-solid md:p-[50px]  flex flex-col">
+                <div className="dark:bg-white px-[10px] pt-[10px] pb-[20px] bg-[#323232] gap-[17px] h-[82vh] justify-between dark:border-black border-white border-b-[2px] overflow-hidden relative rounded-b-[30px] border-solid md:p-[50px]  flex flex-col">
                   <div className=" flex flex-col gap-[20px]">
                     {/* Logo */}
                     <div className="flex gap-[5px] justify-between items-center">
@@ -192,9 +192,9 @@ export default function ImageGallery() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ ease: "easeOut", duration: 1.5, delay: 0.2 }}
-                    className="flex justify-between items-center"
+                    className="flex items-center justify-between"
                   >
-                    <div className=" text-center">
+                    <div className="text-center ">
                       <h1 className="font-nunito text-[30px]">
                         {selectedImage.price}$
                       </h1>
@@ -203,6 +203,55 @@ export default function ImageGallery() {
                       </h1>
                     </div>
                   </motion.div>
+                </div>
+
+                {/* //! Color Types */}
+                <div>
+                   <div className="flex  dark:border-black border-white mt-[30px] border-y-[2px] dark:bg-[#f9aec0] bg-[#323232] pb-[15px] rounded-[30px] flex-col gap-[13px] justify-center items-center w-[100%]">
+ <motion.div>
+   <div className=" p-[20px] "  >
+    <motion.img
+     src={activeImage}
+     alt="Active watch"
+     className="w-[100%] object-contain m-auto rounded-[30px] h-[200px]"
+   />
+   </div>
+ </motion.div>
+ <motion.div
+   className={`  ${
+     selectedImage.col2 ? "grid-cols-2" : "grid-cols-5"
+   } flex gap-[10px] flex-wrap justify-center `}
+ >
+   {[
+     selectedImage.img,
+     selectedImage.img2,
+     selectedImage.img3,
+     selectedImage.img4,
+     selectedImage.img5,
+     selectedImage.img6,
+     selectedImage.img7,
+     selectedImage.img8,
+     selectedImage.img9,
+     selectedImage.img10,
+   ].map(
+     (img, index) =>
+       img && (
+         <img
+           key={index}
+           src={img}
+           alt={`Watch ${index + 1}`}
+           className={`md:h-[100px] md:w-auto w-[110px] rounded-2xl object-contain border-2 ${
+             activeImage === img
+               ? "border-gray-500 border-[3px] p-[2px]  rounded-2xl "
+               : "border-transparent"
+           }`}
+           onClick={() => setActiveImage(img)}
+         />
+       )
+   )}
+ </motion.div>
+</div>
+
                 </div>
 
                 {/*//! button buy */}
@@ -218,7 +267,7 @@ export default function ImageGallery() {
                 >
                   {/* //! price */}
                   <div>
-                    <div className=" text-center">
+                    <div className="text-center ">
                       <h1 className=" font-nunito text-[19px]  ">
                         {selectedImage.price} ${" "}
                       </h1>
@@ -265,46 +314,3 @@ export default function ImageGallery() {
 }
 
 //  {/*//! mein image and typs */}
-//  <div className="flex dark:bg-[#f9aec0] bg-[#2e1563] pb-[15px] rounded-[30px] flex-col gap-[13px] justify-center items-center w-[100%]">
-//  {/* Main image */}
-//  <motion.div>
-//    <motion.img
-//      src={activeImage}
-//      alt="Active watch"
-//      className="w-[100%] object-cover m-auto rounded-[30px] h-[350px]"
-//    />
-//  </motion.div>
-//  <motion.div
-//    className={`  ${
-//      selectedImage.col2 ? "grid-cols-2" : "grid-cols-5"
-//    } flex gap-[10px] flex-wrap justify-center `}
-//  >
-//    {[
-//      selectedImage.img,
-//      selectedImage.img2,
-//      selectedImage.img3,
-//      selectedImage.img4,
-//      selectedImage.img5,
-//      selectedImage.img6,
-//      selectedImage.img7,
-//      selectedImage.img8,
-//      selectedImage.img9,
-//      selectedImage.img10,
-//    ].map(
-//      (img, index) =>
-//        img && (
-//          <img
-//            key={index}
-//            src={img}
-//            alt={`Watch ${index + 1}`}
-//            className={`md:h-[100px] md:w-auto h-[60px] w-[60px] rounded-2xl object-cover border-2 ${
-//              activeImage === img
-//                ? "border-gray-500 border-[3px] p-[1px]  rounded-2xl "
-//                : "border-transparent"
-//            }`}
-//            onClick={() => setActiveImage(img)}
-//          />
-//        )
-//    )}
-//  </motion.div>
-// </div>

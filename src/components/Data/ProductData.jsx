@@ -8,8 +8,8 @@ export const OldWatches = [
     brend: "BYD",
     price: "30 000",
     price2: "390 000 000",
-    img2: "https://static.insales-cdn.com/files/1/880/3138416/original/slider004.jpg",
-    img3: "https://static.insales-cdn.com/files/1/882/3138418/original/slider005.jpg",
+    img2: "https://resonant-otter-27f548.netlify.app/BYD%20cars/EV/5df26cee7d2b4fccb900e7da2662b0cb_1200x0-removebg-preview%20(2).png",
+    img3: "https://resonant-otter-27f548.netlify.app/BYD%20cars/seal/1479c3bae27c4129b1c94b71899c5bc4_1200x0-removebg-preview%20(1).png",
   },
   {
     id: 4,
