@@ -8,10 +8,14 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { FaInstagram, FaStarAndCrescent, FaTelegram } from "react-icons/fa";
 import { HiOutlineCake } from "react-icons/hi";
 import { BsBatteryCharging } from "react-icons/bs";
+import { FaChevronDown } from "react-icons/fa";
 
 const images = OldWatches;
 
 export default function ImageGallery() {
+  //! selected
+  const [selectedItem, setselectedItem] = useState(null)
+
   const [isLoaded, setIsLoaded] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   // Active image state
@@ -30,6 +34,15 @@ export default function ImageGallery() {
       setActiveImage(selectedImage.img); // Default to the first image
     }
   }, [selectedImage]);
+
+  //! toggle
+  const toggle = (i) => {
+    if (selectedItem === i) {
+      return setselectedItem(null)
+    }
+
+    setselectedItem(i)
+  }
 
   return (
     <div className="mb-[100px] text-white dark:text-black mt-[15px] p-[6px] ">
@@ -252,6 +265,28 @@ export default function ImageGallery() {
  </motion.div>
 </div>
 
+                </div>
+
+                {/* //! Product Types */}
+                <div className=" mt-[50px] px-[10px] " >
+                  <h1 className="py-[7px] text-[19px] " >Модификации:</h1>
+                  <div className="flex flex-col gap-[20px]  justify-center text-center accortions ">
+
+                     {selectedImage.typeCar.map((type, i) => (
+                      <div key={i} className=" item" onClick={() => toggle(i) } >
+                      <div className=" title" >
+                        <h1>
+                          {type.cartitle}
+                        </h1>
+                        <h1>
+                          <FaChevronDown/>
+                        </h1>
+                      </div>
+                      <div className={selectedItem === i ? "content show " : "content"  } >{type.content}</div>
+                    </div>
+                     ))}
+
+                  </div>
                 </div>
 
                 {/*//! button buy */}

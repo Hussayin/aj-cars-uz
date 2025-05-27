@@ -10,6 +10,20 @@ export const OldWatches = [
     price2: "390 000 000",
     img2: "https://resonant-otter-27f548.netlify.app/BYD%20cars/EV/5df26cee7d2b4fccb900e7da2662b0cb_1200x0-removebg-preview%20(2).png",
     img3: "https://resonant-otter-27f548.netlify.app/BYD%20cars/seal/1479c3bae27c4129b1c94b71899c5bc4_1200x0-removebg-preview%20(1).png",
+    typeCar: [
+      {
+        cartitle: "BYD Sport 45L",
+        content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum iure, eos eveniet minima ut quis excepturi, accusantium sunt et culpa exercitationem est recusandae. Id, labore? Est sit voluptatibus blanditiis, praesentium voluptate fugit omnis maiores ut commodi, in sunt impedit exercitationem!"
+      },
+      {
+        cartitle: "BYD Sport 45L",
+        content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum iure, eos eveniet minima ut quis excepturi, accusantium sunt et culpa exercitationem est recusandae. Id, labore? Est sit voluptatibus blanditiis, praesentium voluptate fugit omnis maiores ut commodi, in sunt impedit exercitationem!"
+      },
+      {
+        cartitle: "BYD Sport 45L",
+        content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum iure, eos eveniet minima ut quis excepturi, accusantium sunt et culpa exercitationem est recusandae. Id, labore? Est sit voluptatibus blanditiis, praesentium voluptate fugit omnis maiores ut commodi, in sunt impedit exercitationem!"
+      },
+    ]
   },
   {
     id: 4,
