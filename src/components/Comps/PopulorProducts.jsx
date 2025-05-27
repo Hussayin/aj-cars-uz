@@ -267,9 +267,20 @@ export default function ImageGallery() {
 
                 </div>
 
+                {/* //! car infos */}
+                <div className=" py-[7px] " >
+                  <h1 className=" mt-[50px] px-[10px] text-[19px] text-left font-kanit " >Car Infos</h1>
+                <div className=" dark:bg-white px-[10px] py-[20px] bg-[#323232] gap-[17px] justify-between dark:border-black border-white border-y-[2px] overflow-hidden rounded-[30px] border-solid md:p-[50px]  flex flex-col" >
+                  <div className="flex items-center justify-center " >
+                    <img src={selectedImage.img} className=" h-[60px] " alt="" />
+                  </div>
+                  
+                </div>
+                </div>
+
                 {/* //! Product Types */}
                 <div className=" mt-[50px] px-[10px] " >
-                  <h1 className="py-[7px] text-[19px] " >Модификации:</h1>
+                  <h1 className="py-[7px] text-[19px] font-kanit " >Модификации:</h1>
                   <div className="flex flex-col gap-[20px]  justify-center text-center accortions ">
 
                      {selectedImage.typeCar.map((type, i) => (
