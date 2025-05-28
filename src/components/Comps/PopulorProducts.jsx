@@ -14,7 +14,7 @@ const images = OldWatches;
 
 export default function ImageGallery() {
   //! selected
-  const [selectedItem, setselectedItem] = useState(null)
+  const [selectedItem, setselectedItem] = useState(null);
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -29,7 +29,7 @@ export default function ImageGallery() {
   }, [selectedImage]);
 
   // On component load, set initial active image
-  useEffect(() => { 
+  useEffect(() => {
     if (selectedImage) {
       setActiveImage(selectedImage.img); // Default to the first image
     }
@@ -38,11 +38,11 @@ export default function ImageGallery() {
   //! toggle
   const toggle = (i) => {
     if (selectedItem === i) {
-      return setselectedItem(null)
+      return setselectedItem(null);
     }
 
-    setselectedItem(i)
-  }
+    setselectedItem(i);
+  };
 
   return (
     <div className="mb-[100px] text-white dark:text-black mt-[15px] p-[6px] ">
@@ -220,83 +220,384 @@ export default function ImageGallery() {
 
                 {/* //! Color Types */}
                 <div>
-                   <div className="flex  dark:border-black border-white mt-[30px] border-y-[2px] dark:bg-[#f9aec0] bg-[#323232] pb-[15px] rounded-[30px] flex-col gap-[13px] justify-center items-center w-[100%]">
- <motion.div>
-   <div className=" p-[20px] "  >
-    <motion.img
-     src={activeImage}
-     alt="Active watch"
-     className="w-[100%] object-contain m-auto rounded-[30px] h-[200px]"
-   />
-   </div>
- </motion.div>
- <motion.div
-   className={`  ${
-     selectedImage.col2 ? "grid-cols-2" : "grid-cols-5"
-   } flex gap-[10px] flex-wrap justify-center `}
- >
-   {[
-     selectedImage.img,
-     selectedImage.img2,
-     selectedImage.img3,
-     selectedImage.img4,
-     selectedImage.img5,
-     selectedImage.img6,
-     selectedImage.img7,
-     selectedImage.img8,
-     selectedImage.img9,
-     selectedImage.img10,
-   ].map(
-     (img, index) =>
-       img && (
-         <img
-           key={index}
-           src={img}
-           alt={`Watch ${index + 1}`}
-           className={`md:h-[100px] md:w-auto w-[110px] rounded-2xl object-contain border-2 ${
-             activeImage === img
-               ? "border-gray-500 border-[3px] p-[2px]  rounded-2xl "
-               : "border-transparent"
-           }`}
-           onClick={() => setActiveImage(img)}
-         />
-       )
-   )}
- </motion.div>
-</div>
-
+                  <div className="flex  dark:border-black border-white mt-[40px] border-y-[2px] dark:bg-[#f9aec0] bg-[#323232] pb-[15px] rounded-[30px] flex-col gap-[13px] justify-center items-center w-[100%]">
+                    <motion.div>
+                      <div className=" p-[20px] ">
+                        <motion.img
+                          src={activeImage}
+                          alt="Active watch"
+                          className="w-[100%] object-contain m-auto rounded-[30px] h-[200px]"
+                        />
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      className={`  ${
+                        selectedImage.col2 ? "grid-cols-2" : "grid-cols-5"
+                      } flex gap-[10px] flex-wrap justify-center `}
+                    >
+                      {[
+                        selectedImage.img,
+                        selectedImage.img2,
+                        selectedImage.img3,
+                        selectedImage.img4,
+                        selectedImage.img5,
+                        selectedImage.img6,
+                        selectedImage.img7,
+                        selectedImage.img8,
+                        selectedImage.img9,
+                        selectedImage.img10,
+                      ].map(
+                        (img, index) =>
+                          img && (
+                            <img
+                              key={index}
+                              src={img}
+                              alt={`Watch ${index + 1}`}
+                              className={`md:h-[100px] md:w-auto w-[110px] rounded-2xl object-contain border-2 ${
+                                activeImage === img
+                                  ? "border-gray-500 border-[3px] p-[2px]  rounded-2xl "
+                                  : "border-transparent"
+                              }`}
+                              onClick={() => setActiveImage(img)}
+                            />
+                          )
+                      )}
+                    </motion.div>
+                  </div>
                 </div>
 
                 {/* //! car infos */}
-                <div className=" py-[7px] " >
-                  <h1 className=" mt-[50px] px-[10px] text-[19px] text-left font-kanit " >Car Infos</h1>
-                <div className=" dark:bg-white px-[10px] py-[20px] bg-[#323232] gap-[17px] justify-between dark:border-black border-white border-y-[2px] overflow-hidden rounded-[30px] border-solid md:p-[50px]  flex flex-col" >
-                  <div className="flex items-center justify-center " >
-                    <img src={selectedImage.img} className=" h-[60px] " alt="" />
+                <div className=" mt-[40px] ">
+                  <div className=" dark:bg-white px-[10px] py-[30px] pb-[30px] bg-[#323232] gap-[17px] justify-between dark:border-black border-white border-y-[2px] overflow-hidden rounded-[30px] border-solid md:p-[50px]  flex flex-col">
+                    <div className="flex flex-col gap-[10px] items-center justify-center ">
+                      <img
+                        src={selectedImage.img}
+                        className=" h-[70px] "
+                        alt=""
+                      />
+                      <h1 className=" font-kanit text-[18px]">BYD Sport 45L</h1>
+                    </div>
+
+                    {/* //! infos */}
+                    <div className=" grid-cols-3 grid gap-[20px] mt-[10px] flex-wrap justify-center place-content-center  ">
+                      <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                        <img
+                          src="https://urbandrive.uz/icons/car_specs/hybrid/acceleration.svg"
+                          alt=""
+                          className=" bg-white py-[4px] pl-[7px] pr-[12px] rounded-2xl h-[50px]"
+                        />
+                        <div className=" flex flex-col text-center ">
+                          <h1 className=" text-[13px] opacity-55">
+                            0-100 km/h
+                          </h1>
+                          <h1>7,1</h1>
+                        </div>
+                      </div>
+
+                      <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                        <img
+                          src="https://urbandrive.uz/icons/car_specs/hybrid/engine_modification.svg"
+                          alt=""
+                          className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
+                        />
+                        <div className=" flex flex-col text-center ">
+                          <h1 className=" text-[13px] opacity-55">
+                            Engine type
+                          </h1>
+                          <h1>1.5 DOHC</h1>
+                        </div>
+                      </div>
+
+                      <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                        <img
+                          src="https://urbandrive.uz/icons/car_specs/hybrid/fuel_consumption.svg"
+                          alt=""
+                          className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
+                        />
+                        <div className=" flex flex-col text-center ">
+                          <h1 className=" text-[13px] opacity-55">
+                            Fuel consumption
+                          </h1>
+                          <h1>3,8</h1>
+                        </div>
+                      </div>
+
+                      <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                        <img
+                          src="https://urbandrive.uz/icons/car_specs/hybrid/transmission.svg"
+                          alt=""
+                          className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
+                        />
+                        <div className=" flex flex-col text-center ">
+                          <h1 className=" text-[13px] opacity-55">
+                            Transmission
+                          </h1>
+                          <h1>ECVT</h1>
+                        </div>
+                      </div>
+
+                      <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                        <img
+                          src="https://urbandrive.uz/icons/car_specs/hybrid/motor_power.svg"
+                          alt=""
+                          className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
+                        />
+                        <div className=" flex flex-col text-center ">
+                          <h1 className=" text-[13px] opacity-55">
+                            Engine power (hp)
+                          </h1>
+                          <h1>290</h1>
+                        </div>
+                      </div>
+
+                      <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                        <img
+                          src="https://urbandrive.uz/icons/car_specs/hybrid/fuel_tank.svg"
+                          alt=""
+                          className=" bg-white py-[4px] pl-[7px] pr-[12px] rounded-2xl h-[50px]"
+                        />
+                        <div className=" flex flex-col text-center ">
+                          <h1 className=" text-[13px] opacity-55">
+                            Fuel tank volume
+                          </h1>
+                          <h1>48</h1>
+                        </div>
+                      </div>
+
+                      <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                        <img
+                          src="https://urbandrive.uz/icons/car_specs/hybrid/trunk_volume.svg"
+                          alt=""
+                          className=" bg-white py-[4px] pl-[7px] pr-[12px] rounded-2xl h-[50px]"
+                        />
+                        <div className=" flex flex-col text-center ">
+                          <h1 className=" text-[13px] opacity-55">
+                            Trunk volume
+                          </h1>
+                          <h1>450</h1>
+                        </div>
+                      </div>
+
+                      <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                        <img
+                          src="https://urbandrive.uz/icons/car_specs/hybrid/ev_motor_power.svg"
+                          alt=""
+                          className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
+                        />
+                        <div className=" flex flex-col text-center ">
+                          <h1 className=" text-[13px] opacity-55">
+                            Electric motor power
+                          </h1>
+                          <h1>132</h1>
+                        </div>
+                      </div>
+
+                      <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                        <img
+                          src="https://urbandrive.uz/icons/car_specs/hybrid/battery_capacity.svg"
+                          alt=""
+                          className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
+                        />
+                        <div className=" flex flex-col text-center ">
+                          <h1 className=" text-[13px] opacity-55">
+                            Battery capacity
+                          </h1>
+                          <h1>8,3</h1>
+                        </div>
+                      </div>
+
+                      <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                        <img
+                          src="https://urbandrive.uz/icons/car_specs/hybrid/drive_type.svg"
+                          alt=""
+                          className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
+                        />
+                        <div className=" flex flex-col text-center ">
+                          <h1 className=" text-[13px] opacity-55">
+                            Drive type
+                          </h1>
+                          <h1>FWD</h1>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  
-                </div>
                 </div>
 
                 {/* //! Product Types */}
-                <div className=" mt-[50px] px-[10px] " >
-                  <h1 className="py-[7px] text-[19px] font-kanit " >Модификации:</h1>
+                <div className=" mt-[50px] px-[10px] ">
+                  <h1 className="py-[7px] text-[19px] font-kanit ">
+                    Модификации:
+                  </h1>
                   <div className="flex flex-col gap-[20px]  justify-center text-center accortions ">
+                    {selectedImage.typeCar.map((type, i) => (
+                      <div key={i} className=" item" onClick={() => toggle(i)}>
+                        <div className=" title">
+                          <h1>{type.cartitle}</h1>
+                          <h1>
+                            <FaChevronDown />
+                          </h1>
+                        </div>
+                        <div
+                          className={
+                            selectedItem === i ? "content show " : "content"
+                          }
+                        >
+                          <div className="flex flex-col gap-[10px] mt-[20px] items-center justify-center ">
+                            <img
+                              src={selectedImage.img}
+                              className=" h-[70px] "
+                              alt=""
+                            />
+                            <h1 className=" font-kanit text-[18px]">
+                              BYD Sport 45L
+                            </h1>
+                          </div>
 
-                     {selectedImage.typeCar.map((type, i) => (
-                      <div key={i} className=" item" onClick={() => toggle(i) } >
-                      <div className=" title" >
-                        <h1>
-                          {type.cartitle}
-                        </h1>
-                        <h1>
-                          <FaChevronDown/>
-                        </h1>
+                          {/* //! infos */}
+                          <div className=" grid-cols-3 grid gap-[20px] mt-[10px] flex-wrap justify-center place-content-center  ">
+                            <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                              <img
+                                src="https://urbandrive.uz/icons/car_specs/hybrid/acceleration.svg"
+                                alt=""
+                                className=" bg-white py-[4px] pl-[7px] pr-[12px] rounded-2xl h-[50px]"
+                              />
+                              <div className=" flex flex-col text-center ">
+                                <h1 className=" text-[13px] opacity-55">
+                                  0-100 km/h
+                                </h1>
+                                <h1>7,1</h1>
+                              </div>
+                            </div>
+
+                            <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                              <img
+                                src="https://urbandrive.uz/icons/car_specs/hybrid/engine_modification.svg"
+                                alt=""
+                                className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
+                              />
+                              <div className=" flex flex-col text-center ">
+                                <h1 className=" text-[13px] opacity-55">
+                                  Engine type
+                                </h1>
+                                <h1>1.5 DOHC</h1>
+                              </div>
+                            </div>
+
+                            <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                              <img
+                                src="https://urbandrive.uz/icons/car_specs/hybrid/fuel_consumption.svg"
+                                alt=""
+                                className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
+                              />
+                              <div className=" flex flex-col text-center ">
+                                <h1 className=" text-[13px] opacity-55">
+                                  Fuel consumption
+                                </h1>
+                                <h1>3,8</h1>
+                              </div>
+                            </div>
+
+                            <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                              <img
+                                src="https://urbandrive.uz/icons/car_specs/hybrid/transmission.svg"
+                                alt=""
+                                className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
+                              />
+                              <div className=" flex flex-col text-center ">
+                                <h1 className=" text-[13px] opacity-55">
+                                  Transmission
+                                </h1>
+                                <h1>ECVT</h1>
+                              </div>
+                            </div>
+
+                            <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                              <img
+                                src="https://urbandrive.uz/icons/car_specs/hybrid/motor_power.svg"
+                                alt=""
+                                className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
+                              />
+                              <div className=" flex flex-col text-center ">
+                                <h1 className=" text-[13px] opacity-55">
+                                  Engine power (hp)
+                                </h1>
+                                <h1>290</h1>
+                              </div>
+                            </div>
+
+                            <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                              <img
+                                src="https://urbandrive.uz/icons/car_specs/hybrid/fuel_tank.svg"
+                                alt=""
+                                className=" bg-white py-[4px] pl-[7px] pr-[12px] rounded-2xl h-[50px]"
+                              />
+                              <div className=" flex flex-col text-center ">
+                                <h1 className=" text-[13px] opacity-55">
+                                  Fuel tank volume
+                                </h1>
+                                <h1>48</h1>
+                              </div>
+                            </div>
+
+                            <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                              <img
+                                src="https://urbandrive.uz/icons/car_specs/hybrid/trunk_volume.svg"
+                                alt=""
+                                className=" bg-white py-[4px] pl-[7px] pr-[12px] rounded-2xl h-[50px]"
+                              />
+                              <div className=" flex flex-col text-center ">
+                                <h1 className=" text-[13px] opacity-55">
+                                  Trunk volume
+                                </h1>
+                                <h1>450</h1>
+                              </div>
+                            </div>
+
+                            <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                              <img
+                                src="https://urbandrive.uz/icons/car_specs/hybrid/ev_motor_power.svg"
+                                alt=""
+                                className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
+                              />
+                              <div className=" flex flex-col text-center ">
+                                <h1 className=" text-[13px] opacity-55">
+                                  Electric motor power
+                                </h1>
+                                <h1>132</h1>
+                              </div>
+                            </div>
+
+                            <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                              <img
+                                src="https://urbandrive.uz/icons/car_specs/hybrid/battery_capacity.svg"
+                                alt=""
+                                className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
+                              />
+                              <div className=" flex flex-col text-center ">
+                                <h1 className=" text-[13px] opacity-55">
+                                  Battery capacity
+                                </h1>
+                                <h1>8,3</h1>
+                              </div>
+                            </div>
+
+                            <div className=" flex justify-center flex-col items-center gap-[10px] ">
+                              <img
+                                src="https://urbandrive.uz/icons/car_specs/hybrid/drive_type.svg"
+                                alt=""
+                                className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
+                              />
+                              <div className=" flex flex-col text-center ">
+                                <h1 className=" text-[13px] opacity-55">
+                                  Drive type
+                                </h1>
+                                <h1>FWD</h1>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div className={selectedItem === i ? "content show " : "content"  } >{type.content}</div>
-                    </div>
-                     ))}
-
+                    ))}
                   </div>
                 </div>
 
