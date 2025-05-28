@@ -13,16 +13,19 @@ export const OldWatches = [
     typeCar: [
       {
         cartitle: "BYD Sport 45L",
+        carCost: "30.000",
         content:
           "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum iure, eos eveniet minima ut quis excepturi, accusantium sunt et culpa exercitationem est recusandae. Id, labore? Est sit voluptatibus blanditiis, praesentium voluptate fugit omnis maiores ut commodi, in sunt impedit exercitationem!",
       },
       {
         cartitle: "BYD Sport 55L",
+        carCost: "33.000",
         content:
           "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum iure, eos eveniet minima ut quis excepturi, accusantium sunt et culpa exercitationem est recusandae. Id, labore? Est sit voluptatibus blanditiis, praesentium voluptate fugit omnis maiores ut commodi, in sunt impedit exercitationem!",
       },
       {
         cartitle: "BYD Sport 65L",
+        carCost: "35.000",
         content:
           "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum iure, eos eveniet minima ut quis excepturi, accusantium sunt et culpa exercitationem est recusandae. Id, labore? Est sit voluptatibus blanditiis, praesentium voluptate fugit omnis maiores ut commodi, in sunt impedit exercitationem!",
       },

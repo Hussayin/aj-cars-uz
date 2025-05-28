@@ -64,26 +64,27 @@ html.dark {
 
 .item {
   background-color: #323232;
-  padding: 15px 10px;
+  padding: 10px 10px;
   border-radius: 20px;
   border: solid white 1px;
 }
 
 .title {
-  padding: 10px;
+  padding: 5px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
 .content {
   max-height: 0;
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(0,1,0,1);
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
 }
 
 .content.show {
   height: auto;
   overflow: black;
   max-height: 9999px;
-  transition: all 0.5s cubic-bezier(1,0,1,0);
+  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
 }

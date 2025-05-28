@@ -9,6 +9,7 @@ import { FaInstagram, FaStarAndCrescent, FaTelegram } from "react-icons/fa";
 import { HiOutlineCake } from "react-icons/hi";
 import { BsBatteryCharging } from "react-icons/bs";
 import { FaChevronDown } from "react-icons/fa";
+import { FaChevronUp } from "react-icons/fa";
 
 const images = OldWatches;
 
@@ -220,7 +221,7 @@ export default function ImageGallery() {
 
                 {/* //! Color Types */}
                 <div>
-                  <div className="flex  dark:border-black border-white mt-[40px] border-y-[2px] dark:bg-[#f9aec0] bg-[#323232] pb-[15px] rounded-[30px] flex-col gap-[13px] justify-center items-center w-[100%]">
+                  <div className="flex  dark:border-black border-white mt-[40px] pb-[40px] border-y-[2px] dark:bg-[#f9aec0] bg-[#323232] rounded-[30px] flex-col gap-[13px] justify-center items-center w-[100%]">
                     <motion.div>
                       <div className=" p-[20px] ">
                         <motion.img
@@ -279,7 +280,7 @@ export default function ImageGallery() {
                     </div>
 
                     {/* //! infos */}
-                    <div className=" grid-cols-3 grid gap-[20px] mt-[10px] flex-wrap justify-center place-content-center  ">
+                    <div className=" grid-cols-3 grid gap-[20px] mt-[10px] flex-wrap justify-center place-content-center   ">
                       <div className=" flex justify-center flex-col items-center gap-[10px] ">
                         <img
                           src="https://urbandrive.uz/icons/car_specs/hybrid/acceleration.svg"
@@ -420,11 +421,33 @@ export default function ImageGallery() {
                         </div>
                       </div>
                     </div>
+
+                    <div className=" grid-cols-2 grid gap-[20px] mt-[20px] mb-[20px] ">
+                      <div className=" flex justify-center flex-col items-center">
+                        <h1 className=" text-[15px] opacity-45">Length</h1>
+                        <h1 className=" text-[19px]">4780 mm</h1>
+                      </div>
+
+                      <div className=" flex justify-center flex-col items-center">
+                        <h1 className=" text-[15px] opacity-45">Width</h1>
+                        <h1 className=" text-[19px]">4780 mm</h1>
+                      </div>
+
+                      <div className=" flex justify-center flex-col items-center">
+                        <h1 className=" text-[15px] opacity-45">Height</h1>
+                        <h1 className=" text-[19px]">4780 mm</h1>
+                      </div>
+
+                      <div className=" flex justify-center flex-col items-center">
+                        <h1 className=" text-[15px] opacity-45">Wheelbase</h1>
+                        <h1 className=" text-[19px]">4780 mm</h1>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
                 {/* //! Product Types */}
-                <div className=" mt-[50px] px-[10px] ">
+                <div className=" mt-[30px] px-[10px] ">
                   <h1 className="py-[7px] text-[19px] font-kanit ">
                     Модификации:
                   </h1>
@@ -432,9 +455,16 @@ export default function ImageGallery() {
                     {selectedImage.typeCar.map((type, i) => (
                       <div key={i} className=" item" onClick={() => toggle(i)}>
                         <div className=" title">
-                          <h1>{type.cartitle}</h1>
+                          <div>
+                            <h1>{type.cartitle}</h1>
+                            <h1 className=" opacity-45">{type.carCost}$</h1>
+                          </div>
                           <h1>
-                            <FaChevronDown />
+                            {selectedImage == i ? (
+                              <FaChevronUp />
+                            ) : (
+                              <FaChevronDown />
+                            )}
                           </h1>
                         </div>
                         <div
