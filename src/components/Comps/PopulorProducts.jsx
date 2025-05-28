@@ -422,6 +422,7 @@ export default function ImageGallery() {
                       </div>
                     </div>
 
+                    {/* //! size */}
                     <div className=" grid-cols-2 grid gap-[20px] mt-[20px] mb-[20px] ">
                       <div className=" flex justify-center flex-col items-center">
                         <h1 className=" text-[15px] opacity-45">Length</h1>
@@ -442,6 +443,18 @@ export default function ImageGallery() {
                         <h1 className=" text-[15px] opacity-45">Wheelbase</h1>
                         <h1 className=" text-[19px]">4780 mm</h1>
                       </div>
+                    </div>
+
+                    {/* //! button */}
+                    <div className=" flex justify-center items-center">
+                      <a
+                        href="/chazor-infos.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white text-[20px] mt-[3px] text-black font-kanit rounded-2xl py-2 px-4 transition"
+                      >
+                        View all configurations
+                      </a>
                     </div>
                   </div>
                 </div>
