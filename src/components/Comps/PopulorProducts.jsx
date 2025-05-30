@@ -16,6 +16,8 @@ const images = OldWatches;
 export default function ImageGallery() {
   //! selected
   const [selectedItem, setselectedItem] = useState(null);
+  //! 360
+  const [open, setOpen] = useState(false);
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -125,7 +127,7 @@ export default function ImageGallery() {
               >
                 {/*//! Back button */}
                 <button
-                  className=" fixed border-b-[3px] z-[1000000] border-[#515151] w-[100%] flex top-[0] dark:bg-[#f9aec0] bg-[#3b3b3b] py-[10px] px-[10px] "
+                  className=" fixed border-b-[3px] z-[1000000] border-[#515151] w-[100%] flex top-[0] dark:bg-[#f4f1f1] bg-[#3b3b3b] py-[10px] px-[10px] "
                   onClick={() => setSelectedImage(null)}
                 >
                   <IoMdArrowRoundBack
@@ -135,14 +137,14 @@ export default function ImageGallery() {
                 </button>
 
                 {/* //! Product details */}
-                <div className="dark:bg-white px-[10px] pt-[10px] pb-[20px] bg-[#323232] gap-[17px] h-[82vh] justify-between dark:border-black border-white border-b-[2px] overflow-hidden relative rounded-b-[30px] border-solid md:p-[50px]  flex flex-col">
+                <div className="dark:bg-[#f4f1f1] px-[10px] pt-[10px] pb-[20px] bg-[#323232] gap-[17px] h-[82vh] justify-between dark:border-black border-white border-b-[2px] overflow-hidden relative rounded-b-[30px] border-solid md:p-[50px]  flex flex-col">
                   <div className=" flex flex-col gap-[20px]">
                     {/* Logo */}
                     <div className="flex gap-[5px] justify-between items-center">
                       <motion.img
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        transition={{ ease: "easeOut", duration: 1.5 }}
+                        transition={{ ease: "easeOut", duration: 2 }}
                         src="https://khusko-motors.netlify.app/assets/BYD-logo-DJ9JrYTw.jpg"
                         alt="logo-brend"
                         className=" bg-black w-[50px] text-center rounded-3xl object-cover"
@@ -150,7 +152,7 @@ export default function ImageGallery() {
                       <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        transition={{ ease: "easeOut", duration: 1.5 }}
+                        transition={{ ease: "easeOut", duration: 2 }}
                         className=" flex flex-col gap-[10px] "
                       >
                         <button
@@ -166,7 +168,7 @@ export default function ImageGallery() {
                     <motion.div
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
-                      transition={{ ease: "easeOut", duration: 1.5 }}
+                      transition={{ ease: "easeOut", duration: 2 }}
                       className=" leading-6 mt-[10px] flex flex-col gap-[8px] "
                     >
                       <h1 className=" text-[27px] font-nunito font-bold ">
@@ -205,7 +207,7 @@ export default function ImageGallery() {
                   <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ ease: "easeOut", duration: 1.5, delay: 0.2 }}
+                    transition={{ ease: "easeOut", duration: 2 }}
                     className="flex items-center justify-between"
                   >
                     <div className="text-center ">
@@ -220,8 +222,12 @@ export default function ImageGallery() {
                 </div>
 
                 {/* //! Color Types */}
-                <div>
-                  <div className="flex  dark:border-black border-white mt-[40px] pb-[40px] border-y-[2px] dark:bg-[#f9aec0] bg-[#323232] rounded-[30px] flex-col gap-[13px] justify-center items-center w-[100%]">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ ease: "easeOut", duration: 2 }}
+                >
+                  <div className="flex  dark:border-black border-white mt-[40px] pb-[40px] border-y-[2px] dark:bg-[#f4f1f1] bg-[#323232] rounded-[30px] flex-col gap-[13px] justify-center items-center w-[100%]">
                     <motion.div>
                       <div className=" p-[20px] ">
                         <motion.img
@@ -265,11 +271,16 @@ export default function ImageGallery() {
                       )}
                     </motion.div>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* //! car infos */}
-                <div className=" mt-[40px] ">
-                  <div className=" dark:bg-white px-[10px] py-[30px] pb-[30px] bg-[#323232] gap-[17px] justify-between dark:border-black border-white border-y-[2px] overflow-hidden rounded-[30px] border-solid md:p-[50px]  flex flex-col">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ ease: "easeOut", duration: 2 }}
+                  className=" mt-[40px] "
+                >
+                  <div className=" dark:bg-[#f4f1f1] px-[10px] py-[30px] pb-[30px] bg-[#323232] gap-[17px] justify-between dark:border-black border-white border-y-[2px] overflow-hidden rounded-[30px] border-solid md:p-[50px]  flex flex-col">
                     <div className="flex flex-col gap-[10px] items-center justify-center ">
                       <img
                         src={selectedImage.img}
@@ -451,22 +462,31 @@ export default function ImageGallery() {
                         href="/chazor-infos.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-white text-[20px] mt-[3px] text-black font-kanit rounded-2xl py-2 px-4 transition"
+                        className="bg-white dark:bg-[black] dark:text-[#f4f1f1] text-[20px] mt-[3px] text-black font-kanit rounded-2xl py-2 px-4 transition"
                       >
                         View all configurations
                       </a>
                     </div>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* //! Product Types */}
-                <div className=" mt-[30px] px-[10px] ">
-                  <h1 className="py-[7px] text-[19px] font-kanit ">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ ease: "easeOut", duration: 2 }}
+                  className=" mt-[30px] px-[10px] "
+                >
+                  <h1 className="py-[5px] text-[19px] font-kanit ">
                     Модификации:
                   </h1>
                   <div className="flex flex-col gap-[20px]  justify-center text-center accortions ">
                     {selectedImage.typeCar.map((type, i) => (
-                      <div key={i} className=" item" onClick={() => toggle(i)}>
+                      <div
+                        key={i}
+                        className=" dark:bg-[#f4f1f1] item"
+                        onClick={() => toggle(i)}
+                      >
                         <div className=" title">
                           <div>
                             <h1>{type.cartitle}</h1>
@@ -642,7 +662,48 @@ export default function ImageGallery() {
                       </div>
                     ))}
                   </div>
-                </div>
+                </motion.div>
+
+                {/* //! 360 car bar */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ ease: "easeOut", duration: 2 }}
+                  onClick={() => setOpen(true)}
+                  className="py-[20px] dark:bg-[#f4f1f1] mt-[50px] px-[15px] border-y-[2px] border-solid border-white bg-[#323232] rounded-[30px] "
+                >
+                  <h1 className=" text-center font-nunito leading-6 text-[22px]">
+                    360° aylanada ichki qisimni kuzatish
+                  </h1>
+                  <div className=" relative mt-[20px] flex justify-center items-center ">
+                    <img
+                      src="https://bydauto.uz/media/1678467749_772.webp"
+                      alt=""
+                      className="rounded-[40px]"
+                    />
+                    <img
+                      src="https://static.tildacdn.one/tild6163-6331-4138-a138-653439646561/343444.png"
+                      alt=""
+                      className=" absolute bottom-[60px] h-[100px] "
+                    />
+                  </div>
+                </motion.div>
+
+                {open && (
+                  <div className="bg-black flex justify-center items-center w-[100%] h-[100vh] fixed top-0 z-[100000000000000]">
+                    <h1 className=" absolute ">Iltmos kutib turing</h1>
+                    <div
+                      onClick={() => setOpen(false)}
+                      className=" uppercase z-[10000] absolute top-[10px] text-[20px] font-nunito bg-red-600 py-[10px] px-[30px] rounded-lg "
+                    >
+                      <h1>Orqaga</h1>
+                    </div>
+                    <iframe
+                      src={`https://m.dcdapp.com/motor/inapp/pano-new/inner.html?series_id=4300`}
+                      className=" w-[100%] z-[1000] h-[100%] "
+                    ></iframe>
+                  </div>
+                )}
 
                 {/*//! button buy */}
                 <motion.div
@@ -653,7 +714,7 @@ export default function ImageGallery() {
                     duration: 0.5, // Animatsiya davomiyligi
                     delay: 0.1,
                   }}
-                  className=" pb-[22px] fixed gap-[10px] px-[20px] py-[10px] dark:bg-[#f9aec0] bg-[#3b3b3b]  z-[10000000000] bottom-0 w-[100%] flex justify-between items-center border-t-[2px] rounded-t-[20px] border-t-white pt-[5px] "
+                  className=" pb-[22px] fixed gap-[10px] px-[20px] py-[10px] dark:bg-[#f4f1f1] bg-[#3b3b3b]  z-[10000] bottom-0 w-[100%] flex justify-between items-center border-t-[2px] rounded-t-[20px] border-t-white pt-[5px] "
                 >
                   {/* //! price */}
                   <div>
