@@ -30,6 +30,23 @@ export const OldWatches = [
           "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum iure, eos eveniet minima ut quis excepturi, accusantium sunt et culpa exercitationem est recusandae. Id, labore? Est sit voluptatibus blanditiis, praesentium voluptate fugit omnis maiores ut commodi, in sunt impedit exercitationem!",
       },
     ],
+    moreImages: [
+      {
+        image: "https://chinomotors-uz.netlify.app/byd-han/312cca922ae1e3607d669bcaeaf66be1~512x0.webp"
+      },
+      {
+        image: "https://chinomotors-uz.netlify.app/byd-han/48814cacab4d44ccf577a4178a3ba46a~512x0.webp"
+      },
+      {
+        image: "https://chinomotors-uz.netlify.app/byd-han/5dcf0997ffa7e652bc7af69b7beb1d4c~512x0.webp"
+      },
+      {
+        image: "https://chinomotors-uz.netlify.app/byd-han/932413a4a925bbbdd878b147281567ab~512x0.webp"
+      },
+      {
+        image: "https://chinomotors-uz.netlify.app/byd-han/98a609ee16c85171cb0b6792ee1d894f~512x0.webp"
+      },
+    ] 
   },
   {
     id: 4,

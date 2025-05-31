@@ -19,6 +19,10 @@ export default function ImageGallery() {
   //! 360
   const [open, setOpen] = useState(false);
 
+  //! for more images
+    const [isLoadedd, setIsLoadedd] = useState(false);
+      const [selectedImagee, setSelectedImagee] = useState(null);
+
   const [isLoaded, setIsLoaded] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   // Active image state
@@ -298,7 +302,7 @@ export default function ImageGallery() {
                           alt=""
                           className=" bg-white py-[4px] pl-[7px] pr-[12px] rounded-2xl h-[50px]"
                         />
-                        <div className=" flex flex-col text-center ">
+                        <div className="flex flex-col text-center ">
                           <h1 className=" text-[13px] opacity-55">
                             0-100 km/h
                           </h1>
@@ -312,7 +316,7 @@ export default function ImageGallery() {
                           alt=""
                           className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
                         />
-                        <div className=" flex flex-col text-center ">
+                        <div className="flex flex-col text-center ">
                           <h1 className=" text-[13px] opacity-55">
                             Engine type
                           </h1>
@@ -326,7 +330,7 @@ export default function ImageGallery() {
                           alt=""
                           className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
                         />
-                        <div className=" flex flex-col text-center ">
+                        <div className="flex flex-col text-center ">
                           <h1 className=" text-[13px] opacity-55">
                             Fuel consumption
                           </h1>
@@ -340,7 +344,7 @@ export default function ImageGallery() {
                           alt=""
                           className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
                         />
-                        <div className=" flex flex-col text-center ">
+                        <div className="flex flex-col text-center ">
                           <h1 className=" text-[13px] opacity-55">
                             Transmission
                           </h1>
@@ -354,7 +358,7 @@ export default function ImageGallery() {
                           alt=""
                           className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
                         />
-                        <div className=" flex flex-col text-center ">
+                        <div className="flex flex-col text-center ">
                           <h1 className=" text-[13px] opacity-55">
                             Engine power (hp)
                           </h1>
@@ -368,7 +372,7 @@ export default function ImageGallery() {
                           alt=""
                           className=" bg-white py-[4px] pl-[7px] pr-[12px] rounded-2xl h-[50px]"
                         />
-                        <div className=" flex flex-col text-center ">
+                        <div className="flex flex-col text-center ">
                           <h1 className=" text-[13px] opacity-55">
                             Fuel tank volume
                           </h1>
@@ -382,7 +386,7 @@ export default function ImageGallery() {
                           alt=""
                           className=" bg-white py-[4px] pl-[7px] pr-[12px] rounded-2xl h-[50px]"
                         />
-                        <div className=" flex flex-col text-center ">
+                        <div className="flex flex-col text-center ">
                           <h1 className=" text-[13px] opacity-55">
                             Trunk volume
                           </h1>
@@ -396,7 +400,7 @@ export default function ImageGallery() {
                           alt=""
                           className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
                         />
-                        <div className=" flex flex-col text-center ">
+                        <div className="flex flex-col text-center ">
                           <h1 className=" text-[13px] opacity-55">
                             Electric motor power
                           </h1>
@@ -410,7 +414,7 @@ export default function ImageGallery() {
                           alt=""
                           className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
                         />
-                        <div className=" flex flex-col text-center ">
+                        <div className="flex flex-col text-center ">
                           <h1 className=" text-[13px] opacity-55">
                             Battery capacity
                           </h1>
@@ -424,7 +428,7 @@ export default function ImageGallery() {
                           alt=""
                           className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
                         />
-                        <div className=" flex flex-col text-center ">
+                        <div className="flex flex-col text-center ">
                           <h1 className=" text-[13px] opacity-55">
                             Drive type
                           </h1>
@@ -435,29 +439,29 @@ export default function ImageGallery() {
 
                     {/* //! size */}
                     <div className=" grid-cols-2 grid gap-[20px] mt-[20px] mb-[20px] ">
-                      <div className=" flex justify-center flex-col items-center">
+                      <div className="flex flex-col items-center justify-center ">
                         <h1 className=" text-[15px] opacity-45">Length</h1>
                         <h1 className=" text-[19px]">4780 mm</h1>
                       </div>
 
-                      <div className=" flex justify-center flex-col items-center">
+                      <div className="flex flex-col items-center justify-center ">
                         <h1 className=" text-[15px] opacity-45">Width</h1>
                         <h1 className=" text-[19px]">4780 mm</h1>
                       </div>
 
-                      <div className=" flex justify-center flex-col items-center">
+                      <div className="flex flex-col items-center justify-center ">
                         <h1 className=" text-[15px] opacity-45">Height</h1>
                         <h1 className=" text-[19px]">4780 mm</h1>
                       </div>
 
-                      <div className=" flex justify-center flex-col items-center">
+                      <div className="flex flex-col items-center justify-center ">
                         <h1 className=" text-[15px] opacity-45">Wheelbase</h1>
                         <h1 className=" text-[19px]">4780 mm</h1>
                       </div>
                     </div>
 
                     {/* //! button */}
-                    <div className=" flex justify-center items-center">
+                    <div className="flex items-center justify-center ">
                       <a
                         href="/chazor-infos.pdf"
                         target="_blank"
@@ -524,7 +528,7 @@ export default function ImageGallery() {
                                 alt=""
                                 className=" bg-white py-[4px] pl-[7px] pr-[12px] rounded-2xl h-[50px]"
                               />
-                              <div className=" flex flex-col text-center ">
+                              <div className="flex flex-col text-center ">
                                 <h1 className=" text-[13px] opacity-55">
                                   0-100 km/h
                                 </h1>
@@ -538,7 +542,7 @@ export default function ImageGallery() {
                                 alt=""
                                 className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
                               />
-                              <div className=" flex flex-col text-center ">
+                              <div className="flex flex-col text-center ">
                                 <h1 className=" text-[13px] opacity-55">
                                   Engine type
                                 </h1>
@@ -552,7 +556,7 @@ export default function ImageGallery() {
                                 alt=""
                                 className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
                               />
-                              <div className=" flex flex-col text-center ">
+                              <div className="flex flex-col text-center ">
                                 <h1 className=" text-[13px] opacity-55">
                                   Fuel consumption
                                 </h1>
@@ -566,7 +570,7 @@ export default function ImageGallery() {
                                 alt=""
                                 className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
                               />
-                              <div className=" flex flex-col text-center ">
+                              <div className="flex flex-col text-center ">
                                 <h1 className=" text-[13px] opacity-55">
                                   Transmission
                                 </h1>
@@ -580,7 +584,7 @@ export default function ImageGallery() {
                                 alt=""
                                 className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
                               />
-                              <div className=" flex flex-col text-center ">
+                              <div className="flex flex-col text-center ">
                                 <h1 className=" text-[13px] opacity-55">
                                   Engine power (hp)
                                 </h1>
@@ -594,7 +598,7 @@ export default function ImageGallery() {
                                 alt=""
                                 className=" bg-white py-[4px] pl-[7px] pr-[12px] rounded-2xl h-[50px]"
                               />
-                              <div className=" flex flex-col text-center ">
+                              <div className="flex flex-col text-center ">
                                 <h1 className=" text-[13px] opacity-55">
                                   Fuel tank volume
                                 </h1>
@@ -608,7 +612,7 @@ export default function ImageGallery() {
                                 alt=""
                                 className=" bg-white py-[4px] pl-[7px] pr-[12px] rounded-2xl h-[50px]"
                               />
-                              <div className=" flex flex-col text-center ">
+                              <div className="flex flex-col text-center ">
                                 <h1 className=" text-[13px] opacity-55">
                                   Trunk volume
                                 </h1>
@@ -622,7 +626,7 @@ export default function ImageGallery() {
                                 alt=""
                                 className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
                               />
-                              <div className=" flex flex-col text-center ">
+                              <div className="flex flex-col text-center ">
                                 <h1 className=" text-[13px] opacity-55">
                                   Electric motor power
                                 </h1>
@@ -636,7 +640,7 @@ export default function ImageGallery() {
                                 alt=""
                                 className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
                               />
-                              <div className=" flex flex-col text-center ">
+                              <div className="flex flex-col text-center ">
                                 <h1 className=" text-[13px] opacity-55">
                                   Battery capacity
                                 </h1>
@@ -650,7 +654,7 @@ export default function ImageGallery() {
                                 alt=""
                                 className=" bg-white py-[4px] pl-[12px] pr-[12px] rounded-2xl h-[50px]"
                               />
-                              <div className=" flex flex-col text-center ">
+                              <div className="flex flex-col text-center ">
                                 <h1 className=" text-[13px] opacity-55">
                                   Drive type
                                 </h1>
@@ -688,10 +692,9 @@ export default function ImageGallery() {
                     />
                   </div>
                 </motion.div>
-
                 {open && (
                   <div className="bg-black flex justify-center items-center w-[100%] h-[100vh] fixed top-0 z-[100000000000000]">
-                    <h1 className=" absolute ">Iltmos kutib turing</h1>
+                    <h1 className="absolute ">Iltmos kutib turing</h1>
                     <div
                       onClick={() => setOpen(false)}
                       className=" uppercase z-[10000] absolute top-[10px] text-[20px] font-nunito bg-red-600 py-[10px] px-[30px] rounded-lg "
@@ -704,6 +707,60 @@ export default function ImageGallery() {
                     ></iframe>
                   </div>
                 )}
+
+                {/* //! images  */}
+                <div>
+                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[7px] p-2" >
+                    {selectedImage.moreImages.map((img, i) => (
+                      <div key={i} className={`mb-[8px] bg-[#0d1d33] p-[8px] flex flex-col gap-[10px] rounded-lg transition-all duration-500 ${
+              isLoadedd ? "blur-0 bg-[#0d1d33]" : "blur-md bg-[#112544] "
+            }`} >
+              <motion.img
+              src={img.image}
+              alt={`Image ${i}`}
+              className={`cursor-pointer rounded-lg shadow-md w-[100%] object-cover h-[200px] transition-all duration-500 ${
+                isLoadedd ? "blur-0" : "blur-md"
+              }`}
+              onLoad={() => setIsLoadedd(true)} // Rasm yuklanganda blur yo'qoladi
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setSelectedImagee(img)}
+            />
+                      </div>
+                    ) )}
+                    <AnimatePresence>
+          {selectedImagee && (
+            <motion.div
+              className="fixed inset-0 bg-[#112544] z-[1111111111] flex items-start justify-center p-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedImagee(null)}
+            >
+              <motion.div
+                className="relative bg-[#0e1629] w-[100%]  justify-center py-[18px] px-[14px] pt-[20px] rounded-lg shadow-lg"
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.8 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="absolute p-1 text-white bg-gray-800 rounded-full top-2 right-2"
+                  onClick={() => setSelectedImagee(null)}
+                >
+                  <TiDelete size={29} />
+                </button>
+                <img
+                  src={selectedImagee.image}
+                  alt="Selected"
+                  className=" w-[95%] object-cover m-auto border-[#9a9494] border-[2px] h-[350px] rounded-lg"
+                />
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+                   </div>
+                </div>
 
                 {/*//! button buy */}
                 <motion.div
