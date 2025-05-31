@@ -709,16 +709,16 @@ export default function ImageGallery() {
                 )}
 
                 {/* //! images  */}
-                <div>
-                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[7px] p-2" >
+                <div className=" mt-[80px]" >
+                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[10px] p-[10px]" >
                     {selectedImage.moreImages.map((img, i) => (
-                      <div key={i} className={`mb-[8px] bg-[#0d1d33] p-[8px] flex flex-col gap-[10px] rounded-lg transition-all duration-500 ${
+                      <div key={i} className={` bg-[white] p-[1px] flex flex-col gap-[5px] rounded-lg transition-all duration-500 ${
               isLoadedd ? "blur-0 bg-[#0d1d33]" : "blur-md bg-[#112544] "
             }`} >
               <motion.img
               src={img.image}
               alt={`Image ${i}`}
-              className={`cursor-pointer rounded-lg shadow-md w-[100%] object-cover h-[200px] transition-all duration-500 ${
+              className={`cursor-pointer rounded-lg w-[100%] object-cover h-[200px] transition-all duration-500 ${
                 isLoadedd ? "blur-0" : "blur-md"
               }`}
               onLoad={() => setIsLoadedd(true)} // Rasm yuklanganda blur yo'qoladi
@@ -731,29 +731,29 @@ export default function ImageGallery() {
                     <AnimatePresence>
           {selectedImagee && (
             <motion.div
-              className="fixed inset-0 bg-[#112544] z-[1111111111] flex items-start justify-center p-4"
+              className="fixed inset-0 bg-[#000000e0] opacity-40 z-[1111111111] flex items-center justify-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedImagee(null)}
             >
               <motion.div
-                className="relative bg-[#0e1629] w-[100%]  justify-center py-[18px] px-[14px] pt-[20px] rounded-lg shadow-lg"
+                className="relative w-[100%] mb-[90px] items-center justify-center px-[10px] pt-[20px] rounded-lg shadow-lg"
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}
                 exit={{ scale: 0.8 }}
                 onClick={(e) => e.stopPropagation()}
               >
                 <button
-                  className="absolute p-1 text-white bg-gray-800 rounded-full top-2 right-2"
+                  className="absolute p-1  text-white bg-gray-800 rounded-full top-[-50px] right-[45%] "
                   onClick={() => setSelectedImagee(null)}
                 >
-                  <TiDelete size={29} />
+                  <TiDelete size={35} />
                 </button>
                 <img
                   src={selectedImagee.image}
                   alt="Selected"
-                  className=" w-[95%] object-cover m-auto border-[#9a9494] border-[2px] h-[350px] rounded-lg"
+                  className=" w-[100%] object-contain m-auto "
                 />
               </motion.div>
             </motion.div>
