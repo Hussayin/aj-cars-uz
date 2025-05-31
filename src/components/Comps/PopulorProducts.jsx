@@ -712,7 +712,7 @@ export default function ImageGallery() {
                 <div className=" mt-[80px]" >
                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[10px] p-[10px]" >
                     {selectedImage.moreImages.map((img, i) => (
-                      <div key={i} className={` bg-[white] p-[1px] flex flex-col gap-[5px] rounded-lg transition-all duration-500 ${
+                      <div key={i} className={` bg-[#9b9b9b] p-[1px] flex flex-col gap-[5px] rounded-lg transition-all duration-500 ${
               isLoadedd ? "blur-0 bg-[#0d1d33]" : "blur-md bg-[#112544] "
             }`} >
               <motion.img
