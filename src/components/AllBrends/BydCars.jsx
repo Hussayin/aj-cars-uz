@@ -102,7 +102,7 @@ export default function BydDetailes() {
       </div>
       {/* input */}
       {openFilter && (
-        <div className=" px-[10px] w-[100%] m-auto  flex justify-center items-center gap-2 mb-4">
+        <div className=" px-[10px] w-[100%] m-auto mt-[10px] flex justify-center items-center gap-2 mb-[10px]">
         <input
           type="number"
           placeholder="Min Price"
@@ -130,8 +130,8 @@ export default function BydDetailes() {
         {filteredImages.map((img, index) => (
           <div
             key={img.id}
-            className={`mb-[8px] bg-[#0d1d33] p-[8px] flex flex-col gap-[10px] rounded-lg transition-all duration-500 ${
-              isLoaded ? "blur-0 bg-[#0d1d33]" : "blur-md bg-[#112544] "
+            className={`mb-[8px] dark:bg-[#f4f1f1] bg-[#3b3b3b] p-[8px] flex flex-col gap-[10px] rounded-lg transition-all duration-500 ${
+              isLoaded ? "blur-0 bg-[#0d1d33]" : "blur-md dark:bg-[#f4f1f1] "
             }`}
           >
             <motion.img
