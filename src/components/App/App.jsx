@@ -5,6 +5,7 @@ import InstallPrompt from "./InstallModal";
 import ScrollManager from "./ScrollManager";
 import { ToastContainer } from "react-toastify"; // Toastni qo'shamiz
 import "react-toastify/dist/ReactToastify.css"; // Toast stilini import qilamiz
+import BydDetailes from "../AllBrends/BydCars";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         {/* <ScrollToTop /> */}
         <Routes>
           <Route path="/" element={<Enter />} />
+          <Route path="/byd" element={<BydDetailes/>} />
         </Routes>
         {/* </HelmetProvider> */}
       </BrowserRouter>

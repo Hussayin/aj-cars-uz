@@ -11,7 +11,7 @@ const MenuBrends = () => {
         </h1>
       </div>
       <div className=" flex dark:bg-[#f4f1f1]  gap-[12px] mt-[3px] rounded-[10px] overflow-x-scroll bg-[#3b3b3b] p-[3px] hide-scrollbar ">
-        <button className="px-[6px] py-[5px] flex flex-col items-center text-sm font-semibold whitespace-nowrap transition-all">
+        <Link to="/byd" className="px-[6px] py-[5px] flex flex-col items-center text-sm font-semibold whitespace-nowrap transition-all">
           <div className="w-[60px] h-[60px] rounded-full overflow-hidden">
             <img
               src="https://khusko-motors.netlify.app/assets/BYD-logo-DJ9JrYTw.jpg"
@@ -20,7 +20,7 @@ const MenuBrends = () => {
             />
           </div>
           <h2 className="mt-1 text-white dark:text-black">BYD</h2>
-        </button>
+        </Link>
 
         <button className="px-[6px] py-[5px] flex flex-col items-center text-sm font-semibold whitespace-nowrap transition-all">
           <div className="w-[60px] h-[60px] rounded-full overflow-hidden">
