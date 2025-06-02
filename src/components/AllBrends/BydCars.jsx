@@ -126,38 +126,64 @@ export default function BydDetailes() {
       >
         {currency}
       </button> */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[7px] p-2">
+      <div className="grid  grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[10px] px-[7px] mt-[10px] "> 
         {filteredImages.map((img, index) => (
-          <div
+          <motion.div
             key={img.id}
-            className={`mb-[8px] dark:bg-[#f4f1f1] bg-[#3b3b3b] p-[8px] flex flex-col gap-[10px] rounded-lg transition-all duration-500 ${
-              isLoaded ? "blur-0 bg-[#0d1d33]" : "blur-md dark:bg-[#f4f1f1] "
-            }`}
+            onClick={() => setSelectedImage(img)}
+            className={` p-[10px] relative border-[2px] border-[#515151] dark:border-none flex mb-[7px] dark:bg-[#f4f1f1] rounded-[15px] overflow-hidden transition-all duration-500 ${
+              isLoaded ? "blur-0 bg-[#3b3b3b]" : "blur-md bg-[#3b3b3b] "
+            } `}
           >
-            <motion.img
-              src={img.img}
-              alt={`Image ${index}`}
-              className={`cursor-pointer rounded-lg shadow-md w-[100%] object-contain h-[200px] transition-all duration-500 ${
-                isLoaded ? "blur-0" : "blur-md"
-              }`}
-              onLoad={() => setIsLoaded(true)} // Rasm yuklanganda blur yo'qoladi
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setSelectedImage(img)}
-            />
-            <div>
-              <h1 className=" text-[18px] font-nunito">{img.title}</h1>
-              {/* price */}
-              <h1 className=" leading-4 text-[17px] font-nunito text-white">
-                {img.price}$
-              </h1>
-              {/* <h1>
-              {currency === "USD"
-                ? `$${img.price}`
-                : `${img.price * exchangeRate} UZS`}
-            </h1> */}
+            <div className="flex flex-col justify-between gap-[17px]">
+              {/* img */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ ease: "easeOut", duration: 1, delay: 0.1 }}
+                className="flex gap-[10px] items-center"
+              >
+                <img
+                  onLoad={() => setIsLoaded(true)} // Rasm yuklanganda blur yo'qoladi
+                  src="https://khusko-motors.netlify.app/assets/BYD-logo-DJ9JrYTw.jpg"
+                  alt="logo-brend"
+                  className={`w-[50px] bg-black rounded-[50%] object-cover`}
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ ease: "easeOut", duration: 1, delay: 0.2 }}
+              >
+                <h1 className="text-[20px] leading-6 uppercase font-bold font-nunito">
+                  BYD
+                </h1>
+                <h1 className="text-[16px]">BYD HON PRO</h1>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ ease: "easeOut", duration: 1, delay: 0.3 }}
+              >
+                <h1 className="font-kanit text-[17px] leading-3 opacity-70 line-through">
+                  {img.price}
+                </h1>
+                <h1 className="font-kanit text-[27px]">36.777$</h1>
+              </motion.div>
             </div>
-          </div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ ease: "easeOut", duration: 1, delay: 0.2 }}
+              className={`absolute ${img.right}`}
+            >
+              <img
+                src={img.img}
+                alt="image-product-car"
+                className="h-[180px]"
+              />
+            </motion.div>
+          </motion.div>
         ))}
         <AnimatePresence>
           {selectedImage && (
