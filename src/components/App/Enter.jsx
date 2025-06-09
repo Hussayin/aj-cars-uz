@@ -5,6 +5,7 @@ import { Corusell } from "../Comps/Corusel";
 import MenuBrends from "../Comps/Brends";
 import Search from "../Comps/Search";
 import ImageGallery from "../Comps/PopulorProducts";
+import MenuAll from "./MenuPages";
 
 const Enter = () => {
   return (
@@ -18,6 +19,7 @@ const Enter = () => {
       <Corusell />
       <MenuBrends />
       <ImageGallery />
+      <MenuAll />
     </div>
   );
 };

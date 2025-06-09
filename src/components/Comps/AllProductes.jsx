@@ -1,21 +1,37 @@
+import { Byd, Byd1 } from "../Data/ProductData";
+// getet
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TiDelete } from "react-icons/ti";
 import { MdAddShoppingCart, MdPriceChange } from "react-icons/md";
-import { OldWatches } from "../Data/ProductData";
+import {
+  FaChevronDown,
+  FaChevronLeft,
+  FaInstagram,
+  FaTelegram,
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import { TbTruckDelivery } from "react-icons/tb";
-import { FaInstagram, FaStarAndCrescent, FaTelegram } from "react-icons/fa";
-import { HiOutlineCake } from "react-icons/hi";
 import { BsBatteryCharging } from "react-icons/bs";
-import { FaChevronDown } from "react-icons/fa";
-import { FaChevronUp } from "react-icons/fa";
+import MenuAll from "../App/MenuPages";
 
-const images = OldWatches;
+const AllItems = () => {
+  const allData = [...Byd, ...Byd1]; //* agarda yana kerak bo'lsa davom etib ketiladi nuqtalra blan
 
-export default function ImageGallery() {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedBrand, setSelectedBrand] = useState("All");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+  const [currency, setCurrency] = useState("USD");
+  const exchangeRate = 12000; // USD to UZS
+  const [openFilter, setOpenFilter] = useState(false);
+
   //! selected
   const [selectedItem, setselectedItem] = useState(null);
+
+  const [isLoaded, setIsLoaded] = useState(false);
+  // Active image state
+  const [activeImage, setActiveImage] = useState("");
   //! 360
   const [open, setOpen] = useState(false);
 
@@ -23,10 +39,9 @@ export default function ImageGallery() {
   const [isLoadedd, setIsLoadedd] = useState(false);
   const [selectedImagee, setSelectedImagee] = useState(null);
 
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
-  // Active image state
-  const [activeImage, setActiveImage] = useState("");
+  const handleProductClick = (product) => {
+    setOpenFilter(false);
+  };
 
   useEffect(() => {
     document.body.style.overflow = selectedImage ? "hidden" : "auto";
@@ -51,14 +66,72 @@ export default function ImageGallery() {
     setselectedItem(i);
   };
 
+  const filteredImages = allData.filter((img) => {
+    const isBrandMatch = selectedBrand === "All" || img.brend === selectedBrand;
+    const isPriceMatch =
+      (!minPrice || img.price >= minPrice) &&
+      (!maxPrice || img.price <= maxPrice);
+    return isBrandMatch && isPriceMatch;
+  });
+
   return (
-    <div className="mb-[100px] text-white dark:text-black mt-[15px] p-[6px] ">
-      <h1 className=" font-nunito md:text-[35px] mb-[5px] text-[27px] dark:text-black font-bold text-white">
-        Top Cars
-      </h1>
-      <div className="grid  grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[10px] px-[4px] ">
-        {/* Product */}
-        {images.map((img, index) => (
+    <div className="mt-[0px] mb-[100px] text-white">
+      {/* Exit */}
+      <div className="fixed border-b-[3px] z-[10000] border-[#515151] w-[100%] flex top-[0] dark:bg-[#f4f1f1] bg-[#3b3b3b] py-[10px] px-[10px] ">
+        <Link to="/" className="">
+          <IoMdArrowRoundBack
+            className="  w-[60px]  text-black bg-white rounded-xl p-[3px] "
+            size={37}
+          />
+        </Link>
+      </div>
+      <div className="flex gap-[13px] dark:bg-[#f4f1f1] bg-[#3b3b3b] mt-[60px] p-[10px] overflow-x-scroll hide-scrollbar ">
+        <button
+          onClick={() => setOpenFilter(true)}
+          className="px-[15px] py-[5px] rounded-full text-sm font-semibold whitespace-nowrap transition-all bg-blue-500"
+        >
+          <MdPriceChange className="text-[25px]" />
+        </button>
+        {["HYBRID", "ELECTRO"].map((brand) => (
+          <button
+            key={brand}
+            className={` px-[20px] py-[5px] font-kanit text-[17px] rounded-md ${
+              selectedBrand === brand ? "bg-blue-500" : "bg-gray-300 text-black"
+            }`}
+            onClick={() => setSelectedBrand(brand)}
+          >
+            {brand}
+          </button>
+        ))}
+      </div>
+      {/* input */}
+      {openFilter && (
+        <div className=" px-[10px] w-[100%] m-auto mt-[10px] flex justify-center items-center gap-2 mb-[10px]">
+          <input
+            type="number"
+            placeholder="Min Price"
+            value={minPrice}
+            onChange={(e) => setMinPrice(e.target.value)}
+            className="p-2 rounded-md w-[100%] text-black"
+          />
+          <span>до</span>
+          <input
+            type="number"
+            placeholder="Max Price"
+            value={maxPrice}
+            onChange={(e) => setMaxPrice(e.target.value)}
+            className="p-2 rounded-md w-[100%] text-black"
+          />
+        </div>
+      )}
+      {/* <button
+        className="px-4 py-2 mb-4 text-white bg-green-500 rounded-md"
+        onClick={() => setCurrency(currency === "USD" ? "UZS" : "USD")}
+      >
+        {currency}
+      </button> */}
+      <div className="grid  grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[10px] px-[7px] mt-[10px] ">
+        {filteredImages.map((img, index) => (
           <motion.div
             key={img.id}
             onClick={() => setSelectedImage(img)}
@@ -97,7 +170,7 @@ export default function ImageGallery() {
                 transition={{ ease: "easeOut", duration: 1, delay: 0.3 }}
               >
                 <h1 className="font-kanit text-[17px] leading-3 opacity-70 line-through">
-                  37.777$
+                  {img.price}
                 </h1>
                 <h1 className="font-kanit text-[27px]">36.777$</h1>
               </motion.div>
@@ -116,7 +189,6 @@ export default function ImageGallery() {
             </motion.div>
           </motion.div>
         ))}
-        {/* //! Product Details */}
         <AnimatePresence>
           {selectedImage && (
             <motion.div
@@ -822,8 +894,9 @@ export default function ImageGallery() {
           )}
         </AnimatePresence>
       </div>
+      <MenuAll />
     </div>
   );
-}
+};
 
-//  {/*//! mein image and typs */}
+export default AllItems;

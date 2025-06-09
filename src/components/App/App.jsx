@@ -6,6 +6,7 @@ import ScrollManager from "./ScrollManager";
 import { ToastContainer } from "react-toastify"; // Toastni qo'shamiz
 import "react-toastify/dist/ReactToastify.css"; // Toast stilini import qilamiz
 import BydDetailes from "../AllBrends/BydCars";
+import AllItems from "../Comps/AllProductes";
 
 const App = () => {
   return (
@@ -17,7 +18,8 @@ const App = () => {
         {/* <ScrollToTop /> */}
         <Routes>
           <Route path="/" element={<Enter />} />
-          <Route path="/byd" element={<BydDetailes/>} />
+          <Route path="/byd" element={<BydDetailes />} />
+          <Route path="/AllProductes" element={<AllItems />} />
         </Routes>
         {/* </HelmetProvider> */}
       </BrowserRouter>
