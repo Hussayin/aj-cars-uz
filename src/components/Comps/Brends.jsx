@@ -30,7 +30,7 @@ const MenuBrends = () => {
               className="object-cover w-full h-full"
             />
           </div>
-          <h2 className="mt-1 text-white dark:text-black">LIXING</h2>
+          <h2 className="mt-1 text-white dark:text-black">Lixing</h2>
         </button>
 
         <button className="px-[6px] py-[5px] flex flex-col items-center text-sm font-semibold whitespace-nowrap transition-all">

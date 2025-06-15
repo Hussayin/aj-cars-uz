@@ -13,7 +13,7 @@ const MenuAll = () => {
         duration: 0.4, // Animatsiya davomiyligi
         delay: 0.1,
       }}
-      className=" font-bold bg-[#3b3b3b] border-[white] border-t-[3px] rounded-t-[17px] p-[9px] pb-[20px] fixed bottom-0 w-[100%] dark:text-white gap-[14px] z-[100000] flex items-center text-center"
+      className=" font-bold bg-[#3b3b3b] border-[white] border-t-[3px] rounded-t-[17px] p-[9px] pb-[23px] fixed bottom-0 w-[100%] dark:text-white gap-[14px] z-[100000] flex items-center text-center"
     >
       {/* top watchs */}
       <NavLink
