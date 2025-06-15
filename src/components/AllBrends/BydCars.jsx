@@ -90,7 +90,7 @@ export default function BydDetailes() {
         >
           <MdPriceChange className="text-[25px]" />
         </button>
-        {["HYBRID", "ELECTRO"].map((brand) => (
+        {["All", "HYBRID", "ELECTRO"].map((brand) => (
           <button
             key={brand}
             className={` px-[20px] py-[5px] font-kanit text-[17px] rounded-md ${
