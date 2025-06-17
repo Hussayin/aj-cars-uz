@@ -160,7 +160,7 @@ const AllItems = () => {
               onLoad={() => setIsLoaded(true)} // Rasm yuklanganda blur yo'qoladi
               src={img.img}
               alt="image-product-car"
-              className=" object-contain  "
+              className="object-contain "
             />
             {/* title and price */}
             <div className=" flex flex-col gap-[3px]">

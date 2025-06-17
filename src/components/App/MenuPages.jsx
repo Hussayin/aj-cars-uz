@@ -31,7 +31,7 @@ const MenuAll = () => {
       </NavLink>
       {/* Zapchasi */}
       <NavLink
-        to="/AllWatches"
+        to="/magazin"
         className="w-[100%] border-[1px] border-white rounded-[7px] py-[7px]"
       >
         <h1>Магазин</h1>

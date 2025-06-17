@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify"; // Toastni qo'shamiz
 import "react-toastify/dist/ReactToastify.css"; // Toast stilini import qilamiz
 import BydDetailes from "../AllBrends/BydCars";
 import AllItems from "../Comps/AllProductes";
+import MagazinDetailes from "../Comps/Magazin";
 
 const App = () => {
   return (
@@ -18,8 +19,12 @@ const App = () => {
         {/* <ScrollToTop /> */}
         <Routes>
           <Route path="/" element={<Enter />} />
+          {/* Byd detailes */}
           <Route path="/byd" element={<BydDetailes />} />
+          {/* All cars */}
           <Route path="/AllProductes" element={<AllItems />} />
+          {/* magazin */}
+          <Route path="/magazin" element={<MagazinDetailes/>} />
         </Routes>
         {/* </HelmetProvider> */}
       </BrowserRouter>
