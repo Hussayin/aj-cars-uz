@@ -93,10 +93,10 @@ const MagazinDetailes = () => {
           <MdPriceChange className="text-[25px]" />
         </button>
         {/*//! types cars */}
-        {["All", "Lixing", "BYD", "VOYAH", "BMW", "Lipmotors" ].map((brand) => (
+        {["All", "Lixing", "BYD", "VOYAH", "BMW", "Lipmotors"].map((brand) => (
           <button
             key={brand}
-            className={` px-[20px] py-[5px] font-kanit text-[17px] rounded-md ${
+            className={` px-[20px] py-[3px] font-kanit text-[15px] rounded-md ${
               selectedBrand === brand ? "bg-blue-500" : "bg-gray-300 text-black"
             }`}
             onClick={() => setSelectedBrand(brand)}
