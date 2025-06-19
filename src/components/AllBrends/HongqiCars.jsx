@@ -267,7 +267,7 @@ export default function HongqiDetailes() {
                       duration: 1, // Animatsiya davomiyligi
                       delay: 0.2,
                     }}
-                    className=" absolute bottom-[130px] -right-[290px] h-auto "
+                    className={` absolute bottom-[130px] ${selectedImage.eright} h-auto `}
                   >
                     {/* Main image */}
                     <img
